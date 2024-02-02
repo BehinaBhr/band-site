@@ -1,0 +1,175 @@
+@use "./partials/global";
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+
+.header {
+  background-color: $black;
+
+  &__container {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}
+
+.top-nav {
+  background-color: $black;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    padding-top: 0.5rem;
+    margin: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__item {
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+
+    &--active {
+      border-bottom: 3px solid white;
+    }
+  }
+}
+
+.hero {
+  background-image: url("../Assets/Images/hero-bio.jpg");
+  height: 12rem;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__name {
+    // @extend .header-font;
+    margin: 0;
+    padding-left: 1rem;
+    z-index: 1;
+  }
+
+  &__overlay {
+    background-color: $black;
+    opacity: 50%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.about {
+  width: 100%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    // width: 75%;
+  }
+  &__title {
+    margin: 0;
+    padding: 1.5rem 1rem 0rem 1rem;
+  }
+
+  &__image-container {
+    height: 11rem;
+    align-self: center;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.slogan {
+  padding: 0rem 1rem;
+  p {
+    margin-bottom: 0.3rem;
+    margin-top: 0;
+  }
+}
+
+.band {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.gallary {
+  background-color: $lightwhite;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin: 0;
+  }
+  &__image {
+    padding: 0rem 1rem 1rem 1rem;
+    align-self: center;
+    width: 100%;
+  }
+}
+
+.footer {
+  background-color: $black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  color: white;
+  padding: 1rem;
+
+  > * {
+    margin-top: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  &__social-media {
+    display: flex;
+
+    > * {
+      margin-right: 1rem;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 1.5rem;
+  }
+
+  &__name {
+    @extend .subheader-font;
+    margin-top: 0;
+  }
+
+  &__site-name {
+    margin-bottom: 0;
+  }
+}

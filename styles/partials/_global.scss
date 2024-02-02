@@ -1,0 +1,15 @@
+@use "./typography";
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+// *, *::after, *::before{
+//     border:0.5px dashed red;
+//     box-sizing: border-box;
+//     margin: 0;
+// }

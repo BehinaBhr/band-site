@@ -1,0 +1,232 @@
+@font-face {
+  font-family: regularFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: demiFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
+}
+@font-face {
+  font-family: boldFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
+}
+.header-font, .about__title, .hero__name {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: boldFont;
+}
+
+.subheader-font, .footer__name, .band__name, .slogan {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: demiFont;
+}
+
+.body-font, .band__description, .top-nav__link, .footer-font, .footer {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: regularFont;
+}
+
+.labels-buttons-font {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: boldFont;
+}
+
+.header__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: regularFont;
+  color: #ffffff;
+}
+
+.top-nav__link {
+  color: #ffffff;
+}
+
+.hero__name {
+  color: #ffffff;
+}
+
+.about__title {
+  color: #323232;
+}
+
+.slogan {
+  color: #323232;
+}
+
+.band__name {
+  color: #323232;
+}
+.band__description {
+  color: #323232;
+}
+
+.footer__site-name {
+  font-size: 23px;
+}
+.footer__rights {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: #323232;
+}
+.header__container {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: center;
+}
+.header__title {
+  margin: 0;
+}
+
+.top-nav {
+  background-color: #323232;
+}
+.top-nav__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  padding-top: 0.5rem;
+  margin: 0;
+}
+.top-nav__link {
+  text-decoration: none;
+}
+.top-nav__item {
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+.top-nav__item--active {
+  border-bottom: 3px solid white;
+}
+
+.hero {
+  background-image: url("../Assets/Images/hero-bio.jpg");
+  height: 12rem;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero__name {
+  margin: 0;
+  padding-left: 1rem;
+  z-index: 1;
+}
+.hero__overlay {
+  background-color: #323232;
+  opacity: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .main {
+    flex-direction: row;
+  }
+}
+
+.about {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.about__title {
+  margin: 0;
+  padding: 1.5rem 1rem 0rem 1rem;
+}
+.about__image-container {
+  height: 11rem;
+  align-self: center;
+  padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.about__image {
+  width: 100%;
+}
+
+.slogan {
+  padding: 0rem 1rem;
+}
+.slogan p {
+  margin-bottom: 0.3rem;
+  margin-top: 0;
+}
+
+.band {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.gallary {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+.gallary__title {
+  padding: 1.5rem 1rem 1rem 1rem;
+  margin: 0;
+}
+.gallary__image {
+  padding: 0rem 1rem 1rem 1rem;
+  align-self: center;
+  width: 100%;
+}
+
+.footer {
+  background-color: #323232;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  color: white;
+  padding: 1rem;
+}
+.footer > * {
+  margin-top: 1rem;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer__social-media {
+  display: flex;
+}
+.footer__social-media > * {
+  margin-right: 1rem;
+}
+.footer__contact {
+  margin-bottom: 1.5rem;
+}
+.footer__name {
+  margin-top: 0;
+}
+.footer__site-name {
+  margin-bottom: 0;
+}/*# sourceMappingURL=bio.css.map */

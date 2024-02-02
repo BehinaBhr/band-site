@@ -1,0 +1,110 @@
+@use "colors" as *;
+
+@font-face {
+  font-family: regularFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: demiFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
+}
+
+@font-face {
+  font-family: boldFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
+}
+
+.header-font {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: boldFont;
+  }
+  
+  .subheader-font {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: demiFont;
+  }
+  
+  .body-font {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: regularFont;
+  }
+  
+  .footer-font {
+    @extend .body-font
+  }
+
+  .labels-buttons-font {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: boldFont;
+  }
+
+
+.header {
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: regularFont;
+    color: $white;
+  }
+}
+
+.top-nav {
+  &__link {
+    @extend .body-font;
+    color: $white;
+  }
+}
+.hero {
+  &__name {
+    @extend .header-font;
+    color: $white;
+  }
+}
+.about {
+  &__title {
+    @extend .header-font;
+    color: $black;
+  }
+}
+
+.slogan {
+  @extend .subheader-font;
+  color: $black;
+}
+
+.band {
+  &__name {
+    @extend .subheader-font;
+    color: $black;
+  }
+
+  &__description {
+    @extend .body-font;
+    color: $black;
+  }
+}
+
+.footer {
+  @extend .footer-font;
+
+  &__name {
+    @extend .subheader-font;
+  }
+  
+  &__site-name {
+    font-size: 23px;
+  }
+
+  &__rights {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+
+}
+
