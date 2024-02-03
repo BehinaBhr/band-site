@@ -222,6 +222,11 @@ body {
   padding-left: 1rem;
   z-index: 1;
 }
+@media (min-width: 768px) {
+  .hero__name {
+    padding-left: 2.25rem;
+  }
+}
 .hero__overlay {
   background-color: #323232;
   opacity: 50%;

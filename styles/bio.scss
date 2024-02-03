@@ -85,6 +85,9 @@
     margin: 0;
     padding-left: 1rem;
     z-index: 1;
+    @include tablet{
+      padding-left: 2.25rem;
+    }
   }
 
   &__overlay {
