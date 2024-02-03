@@ -121,18 +121,40 @@ a {
   line-height: 18px;
   font-family: regularFont;
 }
+@media (min-width: 768px) {
+  .footer {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.footer__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: demiFont;
+}
+@media (min-width: 768px) {
+  .footer__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
 .footer__name {
   font-size: 14px;
   line-height: 22px;
   font-family: demiFont;
 }
-.footer__site-name {
+.footer__logo {
   font-size: 23px;
 }
 .footer__rights {
   font-size: 10px;
   line-height: 20px;
   font-weight: 700;
+}
+@media (min-width: 768px) {
+  .footer__rights {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -160,6 +182,11 @@ body {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
     justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .header__container {
+    padding-left: 6rem;
   }
 }
 .header__title {
@@ -227,6 +254,11 @@ body {
     padding-left: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__name {
+    padding-left: 6rem;
+  }
+}
 .hero__overlay {
   background-color: #323232;
   opacity: 50%;
@@ -255,6 +287,11 @@ body {
     padding: 3rem 2.25rem 2.25rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .about__title {
+    padding-left: 6rem;
+  }
+}
 .about__image-container {
   height: 11rem;
   align-self: center;
@@ -270,6 +307,12 @@ body {
     height: 18rem;
   }
 }
+@media (min-width: 1280px) {
+  .about__image-container {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
 .about__image {
   width: 100%;
 }
@@ -280,6 +323,11 @@ body {
 @media (min-width: 768px) {
   .slogan {
     padding: 0rem 5.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .slogan {
+    padding: 0rem 9rem;
   }
 }
 .slogan p {
@@ -294,7 +342,13 @@ body {
 }
 @media (min-width: 768px) {
   .band {
-    padding: 2.25em 5.25rem 1.25rem 5.25rem;
+    padding: 2.25rem 5.25rem 1.25rem 5.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .band {
+    padding-right: 9rem;
+    padding-left: 9rem;
   }
 }
 @media (min-width: 768px) {
@@ -323,6 +377,11 @@ body {
     padding: 3rem 2.25rem 0rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .gallary__title {
+    padding-left: 6rem;
+  }
+}
 .gallary__image-container {
   display: flex;
   flex-direction: column;
@@ -335,6 +394,12 @@ body {
     justify-content: space-between;
     padding: 2.25rem;
     padding-bottom: 0.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallary__image-container {
+    padding-right: 6rem;
+    padding-left: 6rem;
   }
 }
 .gallary__image {
@@ -369,20 +434,46 @@ body {
     flex-direction: row;
   }
 }
+@media (min-width: 1280px) {
+  .footer {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
 .footer > * {
   margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__title {
+    padding-right: 2.25rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__title {
+    width: 13rem;
+    padding-right: 3rem;
+  }
 }
 .footer__social-media {
   display: flex;
 }
-.footer__social-media > * {
+@media (min-width: 768px) {
+  .footer__social-media {
+    align-items: flex-end;
+  }
+}
+.footer__icon {
   margin-right: 1rem;
 }
 @media (min-width: 768px) {
-  .footer__social-media > * {
-    margin-left: 2rem;
-    margin-right: 0rem;
+  .footer__icon {
+    margin-right: 2.25rem;
+    margin-left: 0rem;
   }
+}
+.footer__icon img {
+  height: 25px;
 }
 .footer__contact-list {
   display: flex;
@@ -395,20 +486,38 @@ body {
     flex-direction: row;
   }
 }
+@media (min-width: 1280px) {
+  .footer__contact-list {
+    justify-content: flex-start;
+  }
+}
 .footer__contact {
   margin-bottom: 1rem;
+}
+@media (min-width: 1280px) {
+  .footer__contact {
+    padding-right: 3rem;
+    width: 13rem;
+  }
 }
 .footer__name {
   margin-top: 0;
 }
-.footer__site-name {
+.footer__logo {
   margin-bottom: 0;
+  width: 120px;
+  height: 20px;
 }
 @media (min-width: 768px) {
-  .footer__site-name {
+  .footer__logo {
     position: absolute;
-    top: 2.25rem;
+    top: 3.5rem;
     right: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo {
+    right: 6rem;
   }
 }
 @media (min-width: 768px) {

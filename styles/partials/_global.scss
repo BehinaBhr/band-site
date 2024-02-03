@@ -1,8 +1,15 @@
 @use "./typography";
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+$tablet-padding: 2.25rem;
+$tablet-big-padding: 5.25rem;
+
+$desktop-padding: 6rem;
+$desktop-big-padding: 9rem;
+
+// *, *::before, *::after {
+//     box-sizing: border-box;
+//     border: 0.1rem dashed red;
+// }
 
 body {
     margin: 0;

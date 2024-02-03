@@ -1,4 +1,4 @@
-@use "./partials/global";
+@use "./partials/global" as *;
 @use "./partials/colors" as *;
 @use "./partials/mixins" as *;
 
@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
 
-  @include tablet {
+  @include tablet{
     flex-direction: row;
   }
 
@@ -18,9 +18,13 @@
 
     @include tablet {
       padding-top: 0;
-      padding-left: 2.25rem;
-      padding-right: 2.25rem;
+      padding-left: $tablet-padding;
+      padding-right: $tablet-padding;
       justify-content: flex-start;
+    }
+
+    @include desktop {
+      padding-left: $desktop-padding;
     }
   }
 
@@ -86,7 +90,11 @@
     padding-left: 1rem;
     z-index: 1;
     @include tablet{
-      padding-left: 2.25rem;
+      padding-left: $tablet-padding;
+    }
+
+    @include desktop {
+      padding-left: $desktop-padding;
     }
   }
 
@@ -114,7 +122,11 @@
     margin: 0;
     padding: 1.5rem 1rem 1rem 1rem;
     @include tablet {
-      padding: 3rem 2.25rem 2.25rem 2.25rem;
+      padding: 3rem $tablet-padding $tablet-padding $tablet-padding;
+    }
+
+    @include desktop {
+      padding-left: $desktop-padding;
     }
   }
 
@@ -127,8 +139,13 @@
     justify-content: center;
     align-items: flex-end;
     @include tablet {
-      padding: 0rem 5.25rem 2.25rem 5.25rem;
+      padding: 0rem $tablet-big-padding $tablet-padding $tablet-big-padding;
       height: 18rem;
+    }
+    
+    @include desktop {
+      padding-left: $desktop-big-padding;
+      padding-right: $desktop-big-padding;
     }
   }
 
@@ -140,7 +157,11 @@
 .slogan {
   padding: 0rem 1rem;
   @include tablet {
-    padding:0rem 5.25rem;
+    padding:0rem $tablet-big-padding;
+  }
+
+  @include desktop {
+    padding:0rem $desktop-big-padding;
   }
 
   p {
@@ -154,8 +175,14 @@
   display:flex;
   flex-direction:column;
   @include tablet {
-    padding: 2.25em 5.25rem 1.25rem 5.25rem;
+    padding: $tablet-padding $tablet-big-padding calc($tablet-padding - 1rem) $tablet-big-padding;
   }
+  
+  @include desktop {
+    padding-right: $desktop-big-padding;
+    padding-left: $desktop-big-padding;
+  }
+
   &__content{
     @include tablet {
       display:flex;
@@ -179,7 +206,11 @@
     margin: 0;
 
     @include tablet {
-      padding: 3rem 2.25rem 0rem 2.25rem;
+      padding: 3rem $tablet-padding 0rem $tablet-padding;
+    }
+
+    @include desktop {
+      padding-left: $desktop-padding;
     }
   }
 
@@ -192,8 +223,13 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      padding: 2.25rem;
+      padding: $tablet-padding;
       padding-bottom: 0.75rem;
+    }
+
+    @include desktop {
+      padding-right: $desktop-padding;
+      padding-left: $desktop-padding;
     }
   }
 
@@ -225,24 +261,49 @@
   position: relative;
 
   @include tablet {
-    padding: 2.25rem;
+    padding: $tablet-padding;
     flex-direction: row;
+  }
+
+  @include desktop {
+    padding-right: $desktop-padding;
+    padding-left: $desktop-padding;
   }
   
   > * {
     margin-top: 1rem;
   }
 
+  &__title {
+    @include tablet {
+      padding-right: $tablet-padding;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      width: 13rem;
+      padding-right: calc($desktop-padding / 2);
+    }
+  }
+
   &__social-media {
     display: flex;
 
-    > * {
-      margin-right: 1rem;
+    @include tablet {
+      align-items: flex-end;
+    }
+  }
 
-      @include tablet {
-        margin-left: 2rem;
-        margin-right: 0rem;
-      }
+  &__icon {
+    margin-right: 1rem;
+
+    @include tablet {
+      margin-right: $tablet-padding;
+      margin-left: 0rem;
+    }
+
+    img {
+      height: 25px;
     }
   }
 
@@ -256,23 +317,38 @@
       width: 100%;
       flex-direction: row;
     }
+
+    @include desktop {
+      justify-content: flex-start;
+    }
   }
 
   &__contact {
     margin-bottom: 1rem;
+
+    @include desktop {
+      padding-right: calc($desktop-padding / 2);
+      width: 13rem;
+    }
   }
 
   &__name {
     margin-top: 0;
   }
 
-  &__site-name {
+  &__logo {
     margin-bottom: 0;
-
+    width: 120px;
+    height: 20px;
+  
     @include tablet {
       position: absolute;
-      top: 2.25rem;
-      right: 2.25rem;
+      top: 3.5rem;
+      right: $tablet-padding;
+    }
+
+    @include desktop {
+      right: $desktop-padding;
     }
   }
 
