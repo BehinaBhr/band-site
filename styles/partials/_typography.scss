@@ -1,4 +1,5 @@
 @use "colors" as *;
+@use "./mixins" as *;
 
 @font-face {
   font-family: regularFont;
@@ -15,35 +16,6 @@
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
 
-.header-font {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: boldFont;
-  }
-  
-  .subheader-font {
-    font-size: 14px;
-    line-height: 22px;
-    font-family: demiFont;
-  }
-  
-  .body-font {
-    font-size: 13px;
-    line-height: 18px;
-    font-family: regularFont;
-  }
-  
-  .footer-font {
-    @extend .body-font
-  }
-
-  .labels-buttons-font {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: boldFont;
-  }
-
-
 .header {
   &__title {
     font-size: 24px;
@@ -54,48 +26,115 @@
 }
 
 .top-nav {
+
+  &__item {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: regularFont;
+    color: $white;
+
+    &--active{
+      color: red;
+      font-family: demiFont;
+    }
+  }
+
   &__link {
-    @extend .body-font;
     color: $white;
   }
 }
+
 .hero {
   &__name {
-    @extend .header-font;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
     color: $white;
+    @include tablet {
+      font-size: 60px;
+      line-height: 68px;
+    }
   }
 }
+
 .about {
   &__title {
-    @extend .header-font;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
     color: $black;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 }
 
 .slogan {
-  @extend .subheader-font;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: demiFont;
   color: $black;
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &__quoter {
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
 }
 
 .band {
   &__name {
-    @extend .subheader-font;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: demiFont;
     color: $black;
+    @include tablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   &__description {
-    @extend .body-font;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: regularFont;
     color: $black;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.gallary {
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+    color: $black;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 }
 
 .footer {
-  @extend .footer-font;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: regularFont;
 
   &__name {
-    @extend .subheader-font;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: demiFont;
   }
-  
+
   &__site-name {
     font-size: 23px;
   }
@@ -105,6 +144,4 @@
     line-height: 20px;
     font-weight: 700;
   }
-
 }
-

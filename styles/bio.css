@@ -10,30 +10,6 @@
   font-family: boldFont;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
-.header-font, .about__title, .hero__name {
-  font-size: 24px;
-  line-height: 32px;
-  font-family: boldFont;
-}
-
-.subheader-font, .footer__name, .band__name, .slogan {
-  font-size: 14px;
-  line-height: 22px;
-  font-family: demiFont;
-}
-
-.body-font, .band__description, .top-nav__link, .footer-font, .footer {
-  font-size: 13px;
-  line-height: 18px;
-  font-family: regularFont;
-}
-
-.labels-buttons-font {
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: boldFont;
-}
-
 .header__title {
   font-size: 24px;
   line-height: 32px;
@@ -41,29 +17,113 @@
   color: #ffffff;
 }
 
+.top-nav__item {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: regularFont;
+  color: #ffffff;
+}
+.top-nav__item--active {
+  color: red;
+  font-family: demiFont;
+}
 .top-nav__link {
   color: #ffffff;
 }
 
 .hero__name {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: demiFont;
   color: #ffffff;
+}
+@media (min-width: 768px) {
+  .hero__name {
+    font-size: 60px;
+    line-height: 68px;
+  }
 }
 
 .about__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: demiFont;
   color: #323232;
+}
+@media (min-width: 768px) {
+  .about__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .slogan {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: demiFont;
   color: #323232;
+}
+@media (min-width: 768px) {
+  .slogan {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .slogan__quoter {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 .band__name {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: demiFont;
   color: #323232;
+}
+@media (min-width: 768px) {
+  .band__name {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 .band__description {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: regularFont;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .band__description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
 
+.gallary__title {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: demiFont;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .gallary__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.footer {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: regularFont;
+}
+.footer__name {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: demiFont;
+}
 .footer__site-name {
   font-size: 23px;
 }
@@ -73,21 +133,32 @@
   font-weight: 700;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
 }
 
 .header {
   background-color: #323232;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
 }
 .header__container {
   display: flex;
   padding-top: 1rem;
-  justify-content: center;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .header__container {
+    padding-top: 0;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    justify-content: flex-start;
+  }
 }
 .header__title {
   margin: 0;
@@ -105,6 +176,12 @@ body {
   padding-top: 0.5rem;
   margin: 0;
 }
+@media (min-width: 768px) {
+  .top-nav__list {
+    padding-top: 0;
+    justify-content: flex-start;
+  }
+}
 .top-nav__link {
   text-decoration: none;
 }
@@ -116,6 +193,12 @@ body {
 .top-nav__item--active {
   border-bottom: 3px solid white;
 }
+@media (min-width: 768px) {
+  .top-nav__item {
+    padding: 1.5rem 0;
+    margin: 0 1.25rem;
+  }
+}
 
 .hero {
   background-image: url("../Assets/Images/hero-bio.jpg");
@@ -126,6 +209,11 @@ body {
   display: flex;
   align-items: center;
   position: relative;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 25rem;
+  }
 }
 .hero__name {
   margin: 0;
@@ -155,6 +243,11 @@ body {
   margin: 0;
   padding: 1.5rem 1rem 0rem 1rem;
 }
+@media (min-width: 768px) {
+  .about__title {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+}
 .about__image-container {
   height: 11rem;
   align-self: center;
@@ -164,12 +257,23 @@ body {
   justify-content: center;
   align-items: flex-end;
 }
+@media (min-width: 768px) {
+  .about__image-container {
+    padding: 0rem 5.25rem 2.25rem 5.25rem;
+    height: 18rem;
+  }
+}
 .about__image {
   width: 100%;
 }
 
 .slogan {
   padding: 0rem 1rem;
+}
+@media (min-width: 768px) {
+  .slogan {
+    padding: 0rem 5.25rem;
+  }
 }
 .slogan p {
   margin-bottom: 0.3rem;
@@ -178,6 +282,24 @@ body {
 
 .band {
   padding: 1rem 1rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .band {
+    padding: 2.25em 5.25rem 1.25rem 5.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .band__content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 768px) {
+  .band__description {
+    margin-right: 2rem;
+  }
 }
 
 .gallary {
@@ -188,6 +310,11 @@ body {
 .gallary__title {
   padding: 1.5rem 1rem 1rem 1rem;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .gallary__title {
+    padding: 3rem 2.25rem 0rem 2.25rem;
+  }
 }
 .gallary__image-container {
   display: flex;
