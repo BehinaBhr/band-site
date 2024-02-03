@@ -16,6 +16,11 @@
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .header {
   &__title {
     font-size: 24px;
@@ -37,10 +42,6 @@
       color: red;
       font-family: demiFont;
     }
-  }
-
-  &__link {
-    color: $white;
   }
 }
 

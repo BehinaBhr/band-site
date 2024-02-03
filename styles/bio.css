@@ -10,6 +10,11 @@
   font-family: boldFont;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .header__title {
   font-size: 24px;
   line-height: 32px;
@@ -26,9 +31,6 @@
 .top-nav__item--active {
   color: red;
   font-family: demiFont;
-}
-.top-nav__link {
-  color: #ffffff;
 }
 
 .hero__name {
@@ -241,7 +243,7 @@ body {
 }
 .about__title {
   margin: 0;
-  padding: 1.5rem 1rem 0rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media (min-width: 768px) {
   .about__title {
@@ -319,6 +321,7 @@ body {
 .gallary__image-container {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 @media (min-width: 768px) {
   .gallary__image-container {
@@ -330,7 +333,7 @@ body {
   }
 }
 .gallary__image {
-  padding: 0rem 1rem 1rem 1rem;
+  padding-bottom: 1rem;
   align-self: center;
   width: 100%;
 }
@@ -353,13 +356,16 @@ body {
   flex-direction: column;
   color: white;
   padding: 1rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.25rem;
+    flex-direction: row;
+  }
 }
 .footer > * {
   margin-top: 1rem;
-}
-.footer a {
-  text-decoration: none;
-  color: white;
 }
 .footer__social-media {
   display: flex;
@@ -367,12 +373,41 @@ body {
 .footer__social-media > * {
   margin-right: 1rem;
 }
+@media (min-width: 768px) {
+  .footer__social-media > * {
+    margin-left: 2rem;
+    margin-right: 0rem;
+  }
+}
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .footer__contact-list {
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+  }
+}
 .footer__contact {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .footer__name {
   margin-top: 0;
 }
 .footer__site-name {
   margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .footer__site-name {
+    position: absolute;
+    top: 2.25rem;
+    right: 2.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__rights {
+    margin: 0;
+  }
 }/*# sourceMappingURL=bio.css.map */

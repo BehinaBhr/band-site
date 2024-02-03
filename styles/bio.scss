@@ -109,7 +109,7 @@
 
   &__title {
     margin: 0;
-    padding: 1.5rem 1rem 0rem 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     @include tablet {
       padding: 3rem 2.25rem 2.25rem 2.25rem;
     }
@@ -183,6 +183,7 @@
   &__image-container {
     display: flex;
     flex-direction: column;
+    padding: 0 1rem;
 
     @include tablet {
       flex-direction: row;
@@ -194,7 +195,7 @@
   }
 
   &__image {
-    padding: 0rem 1rem 1rem 1rem;
+    padding-bottom: 1rem;
     align-self: center;
     width: 100%;
 
@@ -218,14 +219,15 @@
   flex-direction: column;
   color: white;
   padding: 1rem;
+  position: relative;
 
+  @include tablet {
+    padding: 2.25rem;
+    flex-direction: row;
+  }
+  
   > * {
     margin-top: 1rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
   }
 
   &__social-media {
@@ -233,11 +235,28 @@
 
     > * {
       margin-right: 1rem;
+
+      @include tablet {
+        margin-left: 2rem;
+        margin-right: 0rem;
+      }
+    }
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+
+
+    @include tablet {
+      justify-content: space-between;
+      width: 100%;
+      flex-direction: row;
     }
   }
 
   &__contact {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   &__name {
@@ -246,5 +265,17 @@
 
   &__site-name {
     margin-bottom: 0;
+
+    @include tablet {
+      position: absolute;
+      top: 2.25rem;
+      right: 2.25rem;
+    }
+  }
+
+  &__rights {
+    @include tablet {
+      margin: 0;
+    }
   }
 }
