@@ -6,15 +6,15 @@ $tablet-big-padding: 5.25rem;
 $desktop-padding: 6rem;
 $desktop-big-padding: 9rem;
 
-// *, *::before, *::after {
-//     box-sizing: border-box;
-//     border: 0.1rem dashed red;
-// }
-
 body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+  }
+  
 // *, *::after, *::before{
 //     border:0.5px dashed red;
 //     box-sizing: border-box;
