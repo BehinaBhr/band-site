@@ -1,0 +1,22 @@
+@use "./typography";
+
+$tablet-padding: 2.25rem;
+$tablet-big-padding: 5.25rem;
+
+$desktop-padding: 6rem;
+$desktop-big-padding: 9rem;
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+  }
+  
+// *, *::after, *::before{
+//     border:0.5px dashed red;
+//     box-sizing: border-box;
+//     margin: 0;
+// }

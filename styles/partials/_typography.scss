@@ -1,0 +1,165 @@
+@use "colors" as *;
+@use "./mixins" as *;
+
+@font-face {
+  font-family: regularFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: demiFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
+}
+
+@font-face {
+  font-family: boldFont;
+  src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
+}
+
+
+
+.header {
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: regularFont;
+    color: $white;
+  }
+}
+
+.top-nav {
+
+  &__item {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: regularFont;
+    color: $white;
+
+    &--active{
+      color: red;
+      font-family: demiFont;
+    }
+  }
+}
+
+.hero {
+  &__name {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+    color: $white;
+    @include tablet {
+      font-size: 60px;
+      line-height: 68px;
+    }
+  }
+}
+
+.about {
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+    color: $black;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.slogan {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: demiFont;
+  color: $black;
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &__quoter {
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.band {
+  &__name {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: demiFont;
+    color: $black;
+    @include tablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: regularFont;
+    color: $black;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.gallary {
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+    color: $black;
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.footer {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: regularFont;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  &__name {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: demiFont;
+  }
+
+  &__logo {
+    font-size: 23px;
+  }
+
+  &__rights {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+}
