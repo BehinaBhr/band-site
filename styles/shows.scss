@@ -1,0 +1,30 @@
+@use "./partials/global" as *;
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+
+.hero {
+  background-image: url("../Assets/Images/hero-shows.jpg");
+  flex-direction: column;
+  align-items: flex-start;
+  &__album-name {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: regularFont;
+    color: $white;
+    margin: 0;
+    padding-left: 1rem;
+    z-index: 1;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+.shows {
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+    color: $black;
+    margin: 0;
+    padding: 1.5rem 1rem 1rem 1rem;
+
+  }
+}
