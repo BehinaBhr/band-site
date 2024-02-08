@@ -1,12 +1,7 @@
 @use "./typography";
 @use "./colors" as *;
 @use "./mixins" as *;
-
-$tablet-padding: 2.25rem;
-$tablet-big-padding: 5.25rem;
-
-$desktop-padding: 6rem;
-$desktop-big-padding: 9rem;
+@use "./variable" as *;
 
 body {
     margin: 0;

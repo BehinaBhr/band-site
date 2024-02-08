@@ -1,6 +1,7 @@
 @use "./partials/global" as *;
 @use "./partials/colors" as *;
 @use "./partials/mixins" as *;
+@use "./partials/variable" as *;
 
 .hero {
   background-image: url("../Assets/Images/hero-shows.jpg");
