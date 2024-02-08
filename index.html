@@ -16,10 +16,10 @@
       <nav class="top-nav">
         <ul class="top-nav__list">
           <li class="top-nav__item top-nav__item--active">
-            <a href="#" class="top-nav__link">Biography</a>
+            <a href="index.html" class="top-nav__link">Biography</a>
           </li>
           <li class="top-nav__item">
-            <a href="#" class="top-nav__link">Shows</a>
+            <a href="pages/shows.html" class="top-nav__link">Shows</a>
           </li>
         </ul>
       </nav>
@@ -88,27 +88,75 @@
       </section>
 
       <section class="join">
-        Join the Conversation
+        <h2 class="join__title">Join the Conversation</h2>
+        <form id="add-comment-form" class="form">
+          <div class="avatar">
+            <img
+              src="assets/images/Mohan-muruge.jpg"
+              alt="User Avatar"
+              class="avatar__image"
+              id="userAvatar"
+            />
+          </div>
+          <div class="form__info">
+            <div class="form__input-wrapper">
+              <label for="comment-name">NAME</label>
+              <input
+                placeholder="Enter your name"
+                class="form__input"
+                id="comment-name"
+                type="text"
+                name="name"
+              />
+            </div>
+
+            <div class="form__input-wrapper">
+              <label for="comment-text">COMMENT</label>
+              <textarea
+                placeholder="Add a new comment"
+                id="comment-text"
+                name="comment"
+              ></textarea>
+            </div>
+
+            <div class="form__input-wrapper">
+              <input
+                class="form__input form__input--date"
+                value=""
+                id="comment-time"
+                type="hidden"
+                name="time"
+              />
+            </div>
+
+            <button type="button" id="submit-comment">COMMENT</button>
+          </div>
+        </form>
+      </section>
+      
+     <!-- user -->
+      <section>
+        <div id="comments-container"></div>
       </section>
     </main>
 
     <footer class="footer">
-        <h1 class="footer__title">Get in Touch</h1>
-        <div class="footer__social-media">
-          <div class="footer__icon">
-            <a href="https://instagram.com">
-              <img src="Assets/Icons/SVG/Icon-instagram.svg" />
-            </a>
-          </div>
-          <div class="footer__icon">
-            <a href="https://facebook.com">
-              <img src="Assets/Icons/SVG/Icon-facebook.svg" />
-            </a>
-          </div>
-          <div class="footer__icon">
-            <a href="https://twitter.com">
-              <img src="Assets/Icons/SVG/Icon-twitter.svg" />
-            </a>
+      <h1 class="footer__title">Get in Touch</h1>
+      <div class="footer__social-media">
+        <div class="footer__icon">
+          <a href="https://instagram.com">
+            <img src="Assets/Icons/SVG/Icon-instagram.svg" />
+          </a>
+        </div>
+        <div class="footer__icon">
+          <a href="https://facebook.com">
+            <img src="Assets/Icons/SVG/Icon-facebook.svg" />
+          </a>
+        </div>
+        <div class="footer__icon">
+          <a href="https://twitter.com">
+            <img src="Assets/Icons/SVG/Icon-twitter.svg" />
+          </a>
         </div>
       </div>
       <div class="footer__contact-list">
