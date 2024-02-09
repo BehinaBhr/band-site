@@ -89,7 +89,7 @@
 
       <section class="join">
         <h2 class="join__title">Join the Conversation</h2>
-        <form id="add-comment-form" class="form">
+        <form id="comment-form" class="form">
           <div class="avatar">
             <img
               src="assets/images/Mohan-muruge.jpg"
@@ -115,27 +115,19 @@
               <textarea
                 placeholder="Add a new comment"
                 id="comment-text"
-                name="comment"
+                name="text"
               ></textarea>
             </div>
 
-            <div class="form__input-wrapper">
-              <input
-                class="form__input form__input--date"
-                value=""
-                id="comment-time"
-                type="hidden"
-                name="time"
-              />
+            <div class="form__button-wrapper">
+              <button class="form__button" id="submit-button">COMMENT</button>
             </div>
-
-            <button type="button" id="submit-comment">COMMENT</button>
           </div>
         </form>
       </section>
-      
-     <!-- user -->
-      <section>
+
+      <!-- comements -->
+      <section class="comments">
         <div id="comments-container"></div>
       </section>
     </main>
