@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
 
-  @include tablet{
+  @include tablet {
     flex-direction: row;
   }
 
@@ -47,9 +47,9 @@
     margin: 0;
 
     @include tablet {
-    padding-top: 0;
+      padding-top: 0;
       justify-content: flex-start;
-      }
+    }
   }
 
   &__link {
@@ -83,14 +83,14 @@
   position: relative;
 
   @include tablet {
-  height: 25rem;
+    height: 25rem;
   }
 
   &__name {
     margin: 0;
     padding-left: 1rem;
     z-index: 1;
-    @include tablet{
+    @include tablet {
       padding-left: $tablet-padding;
     }
 
@@ -143,7 +143,7 @@
       padding: 0rem $tablet-big-padding $tablet-padding $tablet-big-padding;
       height: 18rem;
     }
-    
+
     @include desktop {
       padding-left: $desktop-big-padding;
       padding-right: $desktop-big-padding;
@@ -158,11 +158,11 @@
 .slogan {
   padding: 0rem 1rem;
   @include tablet {
-    padding:0rem $tablet-big-padding;
+    padding: 0rem $tablet-big-padding;
   }
 
   @include desktop {
-    padding:0rem $desktop-big-padding;
+    padding: 0rem $desktop-big-padding;
   }
 
   p {
@@ -173,24 +173,25 @@
 
 .band {
   padding: 1rem 1rem 0.5rem 1rem;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   @include tablet {
-    padding: $tablet-padding $tablet-big-padding calc($tablet-padding - 1rem) $tablet-big-padding;
+    padding: $tablet-padding $tablet-big-padding calc($tablet-padding - 1rem)
+      $tablet-big-padding;
   }
-  
+
   @include desktop {
     padding-right: $desktop-big-padding;
     padding-left: $desktop-big-padding;
   }
 
-  &__content{
+  &__content {
     @include tablet {
-      display:flex;
-      flex-direction:row;
+      display: flex;
+      flex-direction: row;
     }
   }
-  &__description{
+  &__description {
     @include tablet {
       margin-right: 2rem;
     }
@@ -252,6 +253,117 @@
   }
 }
 
+.join {
+  padding: 1rem;
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: demiFont;
+    color: $black;
+    margin: 0;
+    padding: 1.5rem 1rem 0rem 0rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $lightsilver;
+  &__info {
+    width: 100%;
+  }
+}
+
+.avatar {
+  width: $avatar-size-mobile;
+  height: $avatar-size-mobile;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 50px;
+  
+  // @include desktop {
+  //   width: $avatar-size-desktop;
+  //   height: $avatar-size-desktop;
+  // }
+
+  // @include tablet {
+  //   width: $avatar-size-mobile;
+  //   height: $avatar-size-mobile;
+  // }
+
+  &__image {
+    width: 135%;
+    height: 105%;
+    object-fit: cover;
+    background-color: $lightsilver;
+  }
+  &--empty {
+    background-color: $lightsilver;
+  }
+}
+
+.form__input-wrapper {
+  padding: 1rem;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 10px;
+    line-height: 20px;
+    font-family: demiFont;
+    color: $silver;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid $form-border-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: $form-border-color-active;
+    }
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+}
+
+.form__input--date {
+  display: none;
+}
+
+.form__button-wrapper {
+  display: flex;
+  padding: 0rem 0 0 1rem;
+}
+.form__button {
+  background-color: $black;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: regularFont;
+  color: $white;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  word-spacing: 3px;
+
+  &:hover {
+    background-color: $darkblack;
+  }
+  //   The CTA button width for desktop and tablet will be no
+  // less than 150px,
+}
+
 .footer {
   background-color: $black;
   display: flex;
@@ -270,7 +382,7 @@
     padding-right: $desktop-padding;
     padding-left: $desktop-padding;
   }
-  
+
   > * {
     margin-top: 1rem;
   }
@@ -312,7 +424,6 @@
     display: flex;
     flex-direction: column;
 
-
     @include tablet {
       justify-content: space-between;
       width: 100%;
@@ -341,7 +452,7 @@
     margin-bottom: 0;
     width: 120px;
     height: 20px;
-  
+
     @include tablet {
       position: absolute;
       top: 3.5rem;
@@ -358,4 +469,10 @@
       margin: 0;
     }
   }
+}
+
+.error {
+  color: red;
+  border-color: red !important;
+  border-width: 3px !important;
 }
