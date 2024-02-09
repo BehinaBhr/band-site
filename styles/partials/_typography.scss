@@ -1,6 +1,6 @@
 @use "colors" as *;
 @use "./mixins" as *;
-@use "./global" as *;
+
 
 @font-face {
   // font-family: regularFont;
@@ -129,6 +129,7 @@
     }
   }
 }
+
 
 .footer {
   font-size: 13px;
