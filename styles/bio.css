@@ -1,5 +1,6 @@
 @font-face {
-  font-family: regularFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 400;
   src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 @font-face {
@@ -10,17 +11,21 @@
   font-family: boldFont;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
+body {
+  font-family: "AvenirNextLTPro";
+}
+
 .header__title {
   font-size: 24px;
   line-height: 32px;
-  font-family: regularFont;
+  font-weight: 400;
   color: #ffffff;
 }
 
 .top-nav__item {
   font-size: 13px;
   line-height: 18px;
-  font-family: regularFont;
+  font-weight: 400;
   color: #ffffff;
 }
 .top-nav__item--active {
@@ -154,6 +159,7 @@
 
 body {
   margin: 0;
+  font-family: "AvenirNextLTPro";
 }
 
 a {
@@ -727,6 +733,20 @@ a {
   background-color: #000000;
 }
 
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.error {
+  color: red;
+  border-color: red !important;
+  border-width: 3px !important;
+}
+
 .footer {
   background-color: #323232;
   display: flex;
@@ -832,10 +852,4 @@ a {
   .footer__rights {
     margin: 0;
   }
-}
-
-.error {
-  color: red;
-  border-color: red !important;
-  border-width: 3px !important;
 }/*# sourceMappingURL=bio.css.map */

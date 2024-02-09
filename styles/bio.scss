@@ -364,6 +364,21 @@
   // less than 150px,
 }
 
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid $lightsilver;
+}
+
+.error {
+  color: red;
+  border-color: red !important;
+  border-width: 3px !important;
+}
+
 .footer {
   background-color: $black;
   display: flex;
@@ -471,8 +486,4 @@
   }
 }
 
-.error {
-  color: red;
-  border-color: red !important;
-  border-width: 3px !important;
-}
+

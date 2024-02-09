@@ -1,18 +1,25 @@
 @use "colors" as *;
 @use "./mixins" as *;
+@use "./global" as *;
 
 @font-face {
-  font-family: regularFont;
+  // font-family: regularFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 400;
   src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 
 @font-face {
-  font-family: demiFont;
+  // font-family: demiFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 600;
   src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
 }
 
 @font-face {
-  font-family: boldFont;
+  // font-family: boldFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 700;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
 
@@ -22,7 +29,8 @@
   &__title {
     font-size: 24px;
     line-height: 32px;
-    font-family: regularFont;
+    font-weight: 400;
+
     color: $white;
   }
 }
@@ -32,12 +40,12 @@
   &__item {
     font-size: 13px;
     line-height: 18px;
-    font-family: regularFont;
+    font-weight: 400;
     color: $white;
 
     &--active{
       color: red;
-      font-family: demiFont;
+      font-weight: 600;
     }
   }
 }
@@ -46,7 +54,7 @@
   &__name {
     font-size: 24px;
     line-height: 32px;
-    font-family: demiFont;
+    font-weight: 600;
     color: $white;
     @include tablet {
       font-size: 60px;
@@ -59,7 +67,7 @@
   &__title {
     font-size: 24px;
     line-height: 32px;
-    font-family: demiFont;
+    font-weight: 600;
     color: $black;
     @include tablet {
       font-size: 36px;
@@ -71,7 +79,7 @@
 .slogan {
   font-size: 14px;
   line-height: 22px;
-  font-family: demiFont;
+  font-weight: 600;
   color: $black;
   @include tablet {
     font-size: 24px;
@@ -89,7 +97,7 @@
   &__name {
     font-size: 14px;
     line-height: 22px;
-    font-family: demiFont;
+    font-weight: 600;
     color: $black;
     @include tablet {
       font-size: 24px;
@@ -100,7 +108,7 @@
   &__description {
     font-size: 13px;
     line-height: 18px;
-    font-family: regularFont;
+    font-weight: 400;
     color: $black;
     @include tablet {
       font-size: 14px;
@@ -113,7 +121,7 @@
   &__title {
     font-size: 24px;
     line-height: 32px;
-    font-family: demiFont;
+    font-weight: 600;
     color: $black;
     @include tablet {
       font-size: 36px;
@@ -125,7 +133,7 @@
 .footer {
   font-size: 13px;
   line-height: 18px;
-  font-family: regularFont;
+  font-weight: 400;
 
   @include tablet {
     font-size: 14px;
@@ -135,7 +143,7 @@
   &__title {
     font-size: 24px;
     line-height: 32px;
-    font-family: demiFont;
+    font-weight: 600;
 
     @include tablet {
       font-size: 36px;
@@ -146,7 +154,7 @@
   &__name {
     font-size: 14px;
     line-height: 22px;
-    font-family: demiFont;
+    font-weight: 600;
   }
 
   &__logo {
