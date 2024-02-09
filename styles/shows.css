@@ -456,7 +456,7 @@ a {
   word-spacing: 3px;
 }
 .show__ticket:hover {
-  background-color: black;
+  background-color: #000000;
 }
 
 .footer {
