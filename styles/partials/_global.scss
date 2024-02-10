@@ -13,11 +13,11 @@ a {
     color: white;
   }
   
-// *, *::after, *::before{
-//     border:0.5px dashed red;
-//     box-sizing: border-box;
-//     margin: 0;
-// }
+*, *::after, *::before{
+    // border:0.5px dashed red;
+    box-sizing: border-box;
+    // margin: 0;
+}
 
 .header {
   background-color: $black;
