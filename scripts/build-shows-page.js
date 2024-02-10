@@ -47,9 +47,11 @@ function createRowEl(title, content){
     return containerEl
 }
 
-function displayShow(show) {
+function displayShow(show, index) {
+  const id = 'shows-' + index
   const showEl = document.createElement("article");
   showEl.classList.add("show");
+  showEl.id = id
 
   const showDateEl = createRowEl('date', show.date );
   const showVenueEl = createRowEl('venue', show.venue );
@@ -64,11 +66,11 @@ function displayShow(show) {
   showEl.appendChild(showLocationEl);
   showEl.appendChild(showTicketBtnEl);
 
-  const showsContainer = document.querySelector('.shows');
+  const showsContainer = document.querySelector('.shows__list');
   showsContainer.appendChild(showEl);
 }
 
 
 for (let i = 0; i < shows.length; i++) {
-  displayShow(shows[i]);
+  displayShow(shows[i], i);
 }

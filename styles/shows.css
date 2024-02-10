@@ -415,7 +415,6 @@ a {
   padding-bottom: 1rem;
 }
 .hero__song {
-  font-size: 10px;
   width: 100%;
   height: 7rem;
   z-index: 2;
@@ -427,11 +426,17 @@ a {
 }
 
 .shows {
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem 0 0.75rem 0;
 }
-.shows > * {
-  padding-left: 1rem;
-  padding-right: 1rem;
+@media (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
 }
 .shows__title {
   font-size: 24px;
@@ -440,6 +445,36 @@ a {
   color: #323232;
   margin: 0;
   padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__title {
+    padding-right: 6rem;
+  }
+}
+
+.shows__list > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.shows__list__headers {
+  display: flex;
+  justify-content: space-between;
+}
+.shows__list__header {
+  width: 20%;
+}
+@media (min-width: 1280px) {
+  .shows__list {
+    width: 100%;
+  }
 }
 
 .show {
@@ -450,6 +485,12 @@ a {
   padding-bottom: 1rem;
   border-bottom: 1px solid #e1e1e1;
 }
+@media (min-width: 768px) {
+  .show {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .show:hover {
   background-color: #e1e1e1;
 }
@@ -459,6 +500,13 @@ a {
 .show__date, .show__venue, .show__location {
   margin-bottom: 0.5rem;
 }
+@media (min-width: 768px) {
+  .show__date, .show__venue, .show__location {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20%;
+  }
+}
 .show__date-title, .show__venue-title, .show__location-title {
   font-size: 10px;
   line-height: 20px;
@@ -467,11 +515,23 @@ a {
   text-transform: uppercase;
   margin: 0;
 }
+@media (min-width: 768px) {
+  .show__date-title, .show__venue-title, .show__location-title {
+    font-size: 12px;
+    display: none;
+  }
+}
 .show__date-content, .show__venue-content, .show__location-content {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
   color: #323232;
+}
+@media (min-width: 768px) {
+  .show__date-content, .show__venue-content, .show__location-content {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 .show__date-content {
   font-weight: 600;
@@ -489,6 +549,27 @@ a {
   margin-top: 1.2rem;
   word-spacing: 3px;
 }
+@media (min-width: 768px) {
+  .show__ticket {
+    width: 9.3rem;
+    margin-top: 0;
+  }
+}
 .show__ticket:hover {
   background-color: #000000;
+}
+
+@media (min-width: 768px) {
+  #shows-0 .show__date-title, #shows-0 .show__location-title, #shows-0 .show__venue-title {
+    display: block;
+    padding-bottom: 2.25rem;
+  }
+  #shows-0 .show__date-content, #shows-0 .show__location-content, #shows-0 .show__venue-content {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+  }
+  #shows-0 .show__ticket {
+    align-self: flex-end;
+  }
 }/*# sourceMappingURL=shows.css.map */

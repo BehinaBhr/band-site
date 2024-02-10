@@ -14,7 +14,7 @@
     height: 30rem;
     padding-top: $tablet-mid-padding;
   }
-  
+
   &__album-name {
     font-size: 14px;
     line-height: 22px;
@@ -30,13 +30,12 @@
     }
   }
 
-  &__name{
+  &__name {
     width: 70%;
     padding-bottom: 1rem;
   }
 
   &__song {
-    font-size: 10px;
     width: 100%;
     height: 7rem;
     z-index: 2;
@@ -48,12 +47,17 @@
 }
 
 .shows {
-  padding: 1.5rem 0 .75rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 0.75rem 0;
 
-  & > * {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: $desktop-padding;
+    padding-left: $desktop-padding;
   }
+
 
   &__title {
     font-size: 24px;
@@ -61,7 +65,38 @@
     font-weight: 600;
     color: $black;
     margin: 0;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    @include desktop {
+      padding-right: $desktop-padding;
+    }
+  }
+}
+
+.shows__list {
+  & > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__headers {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__header {
+    width: 20%;
+  }
+
+  @include desktop {
+    width: 100%;
   }
 }
 
@@ -72,12 +107,18 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid $lightsilver;
-  
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &:hover {
     background-color: $lightsilver;
   }
-  
-  &:active, &:focus  {
+
+  &:active,
+  &:focus {
     background-color: $lightwhite;
   }
 
@@ -85,32 +126,49 @@
   &__venue,
   &__location {
     margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 20%;
+    }
+
     &-title {
       font-size: 10px;
       line-height: 20px;
       font-weight: 600;
       color: $silver;
       text-transform: uppercase;
-      margin:0;
+      margin: 0;
+
+      @include tablet {
+        font-size: 12px;
+        display: none;
+      }
     }
-    
+
     &-content {
       font-size: 13px;
       line-height: 18px;
       font-weight: 400;
       color: $black;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
   }
-  
+
   &__date {
     &-content {
       font-weight: 600;
+    }
   }
-}
-// The CTA button width for desktop and tablet will be no
-// less than 150px, 
-// and have no less than 32px of padding left & right. 
-// The CTA button for mobile should span the entire width of its container.
+  // The CTA button width for desktop and tablet will be no
+  // less than 150px,
+  // and have no less than 32px of padding left & right.
+  // The CTA button for mobile should span the entire width of its container.
 
   &__ticket {
     background-color: $black;
@@ -125,8 +183,37 @@
     margin-top: 1.2rem;
     word-spacing: 3px;
 
+    @include tablet {
+      width: 9.3rem;
+      margin-top: 0;
+    }
+
     &:hover {
       background-color: $darkblack;
+    }
+  }
+}
+
+#shows-0 {
+  @include tablet {
+    .show {
+      &__date,
+      &__location,
+      &__venue {
+        &-title {
+          display: block;
+          padding-bottom: 2.25rem;
+        }
+
+        &-content {
+          display: flex;
+          align-items: center;
+          height: 2.5rem;
+        }
+      }
+    }
+    .show__ticket {
+      align-self: flex-end;
     }
   }
 }
