@@ -370,6 +370,11 @@ a {
   margin-top: 1rem;
 }
 @media (min-width: 768px) {
+  .footer > * {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
   .footer__title {
     padding-right: 2.25rem;
     margin-bottom: 0;
@@ -410,6 +415,7 @@ a {
     justify-content: space-between;
     width: 100%;
     flex-direction: row;
+    padding-top: 1.5rem;
   }
 }
 @media (min-width: 1280px) {
@@ -437,7 +443,7 @@ a {
 @media (min-width: 768px) {
   .footer__logo {
     position: absolute;
-    top: 3.5rem;
+    top: 2.75rem;
     right: 2.25rem;
   }
 }

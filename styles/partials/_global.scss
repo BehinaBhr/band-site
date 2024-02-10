@@ -105,14 +105,12 @@ a {
     padding-left: $tablet-padding;
     padding-right: $tablet-padding;
     height: 28rem;
-
   }
 
   @include desktop {
     padding-left: $desktop-padding;
     padding-right: $desktop-padding;
     height: 40rem;
-     
   }
 
   &__name {
@@ -174,6 +172,10 @@ a {
 
   > * {
     margin-top: 1rem;
+
+    @include tablet {
+      margin-top: 0;
+    }
   }
 
   &__title {
@@ -217,6 +219,7 @@ a {
       justify-content: space-between;
       width: 100%;
       flex-direction: row;
+      padding-top: 1.5rem;
     }
 
     @include desktop {
@@ -244,7 +247,7 @@ a {
 
     @include tablet {
       position: absolute;
-      top: 3.5rem;
+      top: 2.75rem;
       right: $tablet-padding;
     }
 
