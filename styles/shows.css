@@ -396,7 +396,7 @@ a {
 .hero__album-name {
   font-size: 13px;
   line-height: 18px;
-  font-family: regularFont;
+  font-weight: 400;
   color: #ffffff;
   margin: 0;
   z-index: 1;
@@ -413,7 +413,7 @@ a {
 .shows__title {
   font-size: 24px;
   line-height: 32px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #323232;
   margin: 0;
   padding: 1.5rem 1rem 0rem 1rem;
@@ -438,7 +438,7 @@ a {
 .show__date-title, .show__venue-title, .show__location-title {
   font-size: 10px;
   line-height: 20px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #afafaf;
   text-transform: uppercase;
   margin: 0;
@@ -446,17 +446,17 @@ a {
 .show__date-content, .show__venue-content, .show__location-content {
   font-size: 13px;
   line-height: 18px;
-  font-family: regularFont;
+  font-weight: 400;
   color: #323232;
 }
 .show__date-content {
-  font-family: demiFont;
+  font-weight: 600;
 }
 .show__ticket {
   background-color: #323232;
   font-size: 15px;
   line-height: 20px;
-  font-family: regularFont;
+  font-weight: 400;
   color: #ffffff;
   width: 100%;
   height: 40px;
