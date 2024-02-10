@@ -50,13 +50,14 @@ function displayComment(comment) {
   commentEl.classList.add("comment");
 
   const avatarEl = document.createElement("div");
-  avatarEl.classList.add("avatar");
-  avatarEl.classList.add("avatar--empty");
+  avatarEl.classList.add("comment__avatar");
+  avatarEl.classList.add("comment__avatar--empty");
 
   const commentInfoEl = document.createElement("div");
   commentInfoEl.classList.add("comment__info");
   
   const commentHeaderEl = document.createElement("div");
+  commentHeaderEl.classList.add("comment__header");
   
   const commentNameEl = document.createElement("h3");
   commentNameEl.classList.add("comment__name");
@@ -66,8 +67,9 @@ function displayComment(comment) {
   dateEl.classList.add("comment__date");
   dateEl.innerHTML = comment.timestamp;
 
-  commentHeaderEl.appendChild(dateEl)
-  commentHeaderEl.appendChild(commentNameEl)
+  commentHeaderEl.appendChild(commentNameEl);
+  commentHeaderEl.appendChild(dateEl);
+  
   
   const commentTextEl = document.createElement("p");
   commentTextEl.classList.add("comment__text");
