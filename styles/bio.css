@@ -157,7 +157,7 @@
 
 body {
   margin: 0;
-  font-family: "AvenirNextLTPro";
+  font-family: "AvenirNextLTPro" !important;
 }
 
 a {
@@ -653,6 +653,17 @@ a {
   margin: 0;
   padding: 0 1rem 0 0;
 }
+@media (min-width: 768px) {
+  .join__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+@media (min-width: 768px) {
+  .join {
+    padding: 2.25rem;
+  }
+}
 
 .form {
   display: flex;
@@ -660,6 +671,12 @@ a {
   padding-bottom: 1rem;
   padding-top: 1rem;
   border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .form {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
 }
 .form__info {
   width: 100%;
@@ -680,6 +697,8 @@ a {
 }
 .form__input-wrapper input,
 .form__input-wrapper textarea {
+  font-family: inherit;
+  background-color: #fafafa;
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #e1e1e1;
@@ -726,21 +745,15 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-#comment-name {
-  min-height: 2.25rem;
-}
-@media (min-width: 768px) {
-  #comment-name {
-    min-height: 3rem;
-  }
-}
-
 .form__button-wrapper {
   display: flex;
   padding: 0rem 0 0 1rem;
 }
-
+@media (min-width: 768px) {
+  .form__button-wrapper {
+    justify-content: flex-end;
+  }
+}
 .form__button {
   background-color: #323232;
   font-size: 15px;
@@ -753,8 +766,23 @@ a {
   border-radius: 4px;
   word-spacing: 3px;
 }
+@media (min-width: 768px) {
+  .form__button {
+    padding: 0 2rem;
+    width: 9.3rem;
+  }
+}
 .form__button:hover {
   background-color: #000000;
+}
+
+#comment-name {
+  min-height: 2.25rem;
+}
+@media (min-width: 768px) {
+  #comment-name {
+    min-height: 3rem;
+  }
 }
 
 .comments {
