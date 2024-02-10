@@ -259,10 +259,10 @@
   &__title {
     font-size: 24px;
     line-height: 32px;
-    font-family: demiFont;
+    font-weight: 600;
     color: $black;
     margin: 0;
-    padding: 1.5rem 1rem 0rem 0rem;
+    padding: 0 1rem 0 0;
   }
 }
 
@@ -270,75 +270,77 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 1rem;
+  padding-top: 1rem;
   border-bottom: 1px solid $lightsilver;
   &__info {
     width: 100%;
   }
-}
 
-.avatar {
-  width: $avatar-size-mobile;
-  height: $avatar-size-mobile;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: 50px;
-  
-  // @include desktop {
-  //   width: $avatar-size-desktop;
-  //   height: $avatar-size-desktop;
-  // }
+  &__input-wrapper {
+    padding: 0 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
 
-  // @include tablet {
-  //   width: $avatar-size-mobile;
-  //   height: $avatar-size-mobile;
-  // }
+    label {
+      font-size: 10px;
+      line-height: 20px;
+      font-weight: 600;
+      color: $silver;
+      text-transform: uppercase;
+      margin: 0;
+      padding-bottom: 0.25rem;
+    }
 
-  &__image {
-    width: 135%;
-    height: 105%;
-    object-fit: cover;
-    background-color: $lightsilver;
-  }
-  &--empty {
-    background-color: $lightsilver;
-  }
-}
-
-.form__input-wrapper {
-  padding: 1rem;
-  padding-right: 0;
-  display: flex;
-  flex-direction: column;
-
-  label {
-    font-size: 10px;
-    line-height: 20px;
-    font-family: demiFont;
-    color: $silver;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid $form-border-color;
-    border-radius: 4px;
-    box-sizing: border-box;
-
-    &:focus {
-      border-color: $form-border-color-active;
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid $form-border-color;
+      border-radius: 4px;
+      box-sizing: border-box;
+      @include desktop {
+        padding: 1rem;
+      }
+      @include tablet {
+        padding: 1rem;
+      }
+      &:active,
+      &:focus {
+        border: 1px solid $black;
+      }
     }
   }
 
-  textarea {
-    min-height: 100px;
+  &__avatar {
+    width: 2.25rem;
+    height: 2.2rem;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 1.7rem;
+
+    // @include desktop {
+
+    // }
+
+    // @include tablet {
+
+    // }
+  }
+
+  &__avatar-image {
+    width: 135%;
+    height: 105%;
+    object-fit: cover;
   }
 }
 
-.form__input--date {
-  display: none;
+#comment-name {
+  min-height: 2.25rem;
+  @include tablet {
+    min-height: 3rem;
+  }
 }
 
 .form__button-wrapper {
@@ -349,7 +351,7 @@
   background-color: $black;
   font-size: 15px;
   line-height: 20px;
-  font-family: regularFont;
+  font-weight: 400;
   color: $white;
   width: 100%;
   height: 40px;
@@ -364,19 +366,58 @@
   // less than 150px,
 }
 
-
+.comments {
+  padding: 1rem;
+  padding-top: 0;
+}
 .comment {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0;
-  padding: 1rem;
   border-bottom: 1px solid $lightsilver;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    width: 100%;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $black;
+  }
+  &__date {
+    //??
+    margin-top: 0.8rem;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $silver;
+  }
+  &__text {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &__avatar {
+    @extend .form__avatar;
+    margin-top: 0.7rem;
+
+    &--empty {
+      background-color: $lightsilver;
+    }
+  }
 }
 
 .error {
-  color: red;
-  border-color: red !important;
-  border-width: 3px !important;
+  border: 1px solid #d22d2d !important;
 }
 
 .footer {
@@ -485,5 +526,3 @@
     }
   }
 }
-
-

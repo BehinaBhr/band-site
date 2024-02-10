@@ -4,17 +4,15 @@
   src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 @font-face {
-  font-family: demiFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 600;
   src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
 }
 @font-face {
-  font-family: boldFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 700;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
-body {
-  font-family: "AvenirNextLTPro";
-}
-
 .header__title {
   font-size: 24px;
   line-height: 32px;
@@ -30,13 +28,13 @@ body {
 }
 .top-nav__item--active {
   color: red;
-  font-family: demiFont;
+  font-weight: 600;
 }
 
 .hero__name {
   font-size: 24px;
   line-height: 32px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #ffffff;
 }
 @media (min-width: 768px) {
@@ -49,7 +47,7 @@ body {
 .about__title {
   font-size: 24px;
   line-height: 32px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -62,7 +60,7 @@ body {
 .slogan {
   font-size: 14px;
   line-height: 22px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -81,7 +79,7 @@ body {
 .band__name {
   font-size: 14px;
   line-height: 22px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -93,7 +91,7 @@ body {
 .band__description {
   font-size: 13px;
   line-height: 18px;
-  font-family: regularFont;
+  font-weight: 400;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -106,7 +104,7 @@ body {
 .gallary__title {
   font-size: 24px;
   line-height: 32px;
-  font-family: demiFont;
+  font-weight: 600;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -119,7 +117,7 @@ body {
 .footer {
   font-size: 13px;
   line-height: 18px;
-  font-family: regularFont;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .footer {
@@ -130,7 +128,7 @@ body {
 .footer__title {
   font-size: 24px;
   line-height: 32px;
-  font-family: demiFont;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .footer__title {
@@ -141,7 +139,7 @@ body {
 .footer__name {
   font-size: 14px;
   line-height: 22px;
-  font-family: demiFont;
+  font-weight: 600;
 }
 .footer__logo {
   font-size: 23px;
@@ -165,6 +163,12 @@ body {
 a {
   text-decoration: none;
   color: white;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 .header {
