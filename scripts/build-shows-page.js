@@ -56,14 +56,17 @@ function displayShow(show, index) {
   const showDateEl = createRowEl('date', show.date );
   const showVenueEl = createRowEl('venue', show.venue );
   const showLocationEl = createRowEl('location', show.location );
+  const showInfoContainer = document.createElement('div')
+  showInfoContainer.classList.add("show__info")
+  showInfoContainer.appendChild(showDateEl)
+  showInfoContainer.appendChild(showVenueEl)
+  showInfoContainer.appendChild(showLocationEl)
 
   const showTicketBtnEl = document.createElement("button");
   showTicketBtnEl.classList.add("show__ticket");
   showTicketBtnEl.innerText = "BUY TICKETS";
 
-  showEl.appendChild(showDateEl);
-  showEl.appendChild(showVenueEl);
-  showEl.appendChild(showLocationEl);
+  showEl.appendChild(showInfoContainer);
   showEl.appendChild(showTicketBtnEl);
 
   const showsContainer = document.querySelector('.shows__list');

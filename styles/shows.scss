@@ -46,6 +46,20 @@
   }
 }
 
+.table {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - $button-width-tablet-desktop);
+  }
+
+  &__header {
+    color: $silver;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
 .shows {
   display: flex;
   flex-direction: column;
@@ -58,6 +72,34 @@
     padding-left: $desktop-padding;
   }
 
+  &__list {
+    & > * {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__header-container {
+    @extend .table;
+    display: none;
+    padding-bottom: 1.25rem;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__header {
+    @extend .table__header;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+    width: calc(100%);
+  }
 
   &__title {
     font-size: 24px;
@@ -77,26 +119,6 @@
     @include desktop {
       padding-right: $desktop-padding;
     }
-  }
-}
-
-.shows__list {
-  & > * {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  &__headers {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__header {
-    width: 20%;
-  }
-
-  @include desktop {
-    width: 100%;
   }
 }
 
@@ -122,6 +144,16 @@
     background-color: $lightwhite;
   }
 
+  &__info {
+    @extend .table;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
   &__date,
   &__venue,
   &__location {
@@ -130,19 +162,16 @@
     @include tablet {
       margin-top: auto;
       margin-bottom: auto;
-      width: 20%;
+      width: 100%;
     }
 
     &-title {
+      @extend .table__header;
       font-size: 10px;
       line-height: 20px;
       font-weight: 600;
-      color: $silver;
-      text-transform: uppercase;
-      margin: 0;
 
       @include tablet {
-        font-size: 12px;
         display: none;
       }
     }
@@ -171,49 +200,11 @@
   // The CTA button for mobile should span the entire width of its container.
 
   &__ticket {
-    background-color: $black;
-    font-size: 15px;
-    line-height: 20px;
-    font-weight: 400;
-    color: $white;
-    width: 100%;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
+    @extend .button;
     margin-top: 1.2rem;
-    word-spacing: 3px;
 
     @include tablet {
-      width: 9.3rem;
       margin-top: 0;
-    }
-
-    &:hover {
-      background-color: $darkblack;
-    }
-  }
-}
-
-#shows-0 {
-  @include tablet {
-    .show {
-      &__date,
-      &__location,
-      &__venue {
-        &-title {
-          display: block;
-          padding-bottom: 2.25rem;
-        }
-
-        &-content {
-          display: flex;
-          align-items: center;
-          height: 2.5rem;
-        }
-      }
-    }
-    .show__ticket {
-      align-self: flex-end;
     }
   }
 }
