@@ -77,6 +77,10 @@
 .footer-header-font {
   font-size: 24px;
   line-height: 32px;
+  
+  @include tablet {
+    font-size: 30px;
+  }
 }
 
 .lable-button-font {

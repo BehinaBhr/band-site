@@ -71,6 +71,11 @@
   font-size: 24px;
   line-height: 32px;
 }
+@media (min-width: 768px) {
+  .footer-header-font, .footer__title {
+    font-size: 30px;
+  }
+}
 
 .lable-button-font, .form__input-wrapper label, .show__date-title, .show__venue-title, .show__location-title, .footer__rights {
   font-size: 10px;
@@ -281,6 +286,14 @@ a {
   .top-nav__item {
     padding: 1.5rem 0;
     margin: 0 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .top-nav__item {
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 4rem;
+    margin-right: 0.75rem;
   }
 }
 
@@ -699,6 +712,7 @@ a {
 .form__input-wrapper textarea:active,
 .form__input-wrapper textarea:focus {
   border: 1px solid #323232;
+  outline: none;
 }
 .form__input-wrapper ::-moz-placeholder {
   /* Most modern browsers support this now. */
