@@ -614,6 +614,8 @@ a {
 .join {
   padding: 1rem;
   padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .join__title {
   margin: 0;
@@ -641,6 +643,12 @@ a {
   .form {
     margin-right: 3rem;
     margin-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .form {
+    width: calc(60% - 6rem);
+    align-self: center;
   }
 }
 .form__info {
@@ -748,6 +756,12 @@ a {
   .comments {
     padding-right: 3rem;
     padding-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments {
+    width: 60%;
+    align-self: center;
   }
 }
 

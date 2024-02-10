@@ -161,6 +161,8 @@
 .join {
   padding: 1rem;
   padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 
   &__title {
     margin: 0;
@@ -187,9 +189,10 @@
     margin-right: $tablet-mid-padding;
     margin-left: $tablet-mid-padding;
   }
-  
+
   @include desktop {
-    // width: 50;
+    width: calc(60% - 2*$tablet-mid-padding);
+    align-self: center;
   }
   
   &__info {
@@ -295,6 +298,11 @@
   @include tablet {
     padding-right: $tablet-mid-padding;
     padding-left: $tablet-mid-padding;
+  }
+
+  @include desktop {
+    width: 60%;
+    align-self: center;
   }
 }
 
