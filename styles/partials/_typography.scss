@@ -61,6 +61,18 @@
       line-height: 68px;
     }
   }
+
+  &__album-name {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $white;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
 }
 
 .about {
@@ -169,6 +181,139 @@
 
     @include tablet {
       font-size: 12px;
+    }
+  }
+}
+
+.shows {
+
+  &__header {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $black;
+
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.show {
+
+  &__date,
+  &__venue,
+  &__location {
+    &-title {
+      font-size: 10px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    &-content {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $black;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__date {
+    &-content {
+      font-weight: 600;
+    }
+  }
+  // The CTA button width for desktop and tablet will be no
+  // less than 150px,
+  // and have no less than 32px of padding left & right.
+  // The CTA button for mobile should span the entire width of its container.
+}
+
+.join {
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $black;
+
+    @include tablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.form {
+  &__input-wrapper {
+    label {
+      font-size: 10px;
+      line-height: 20px;
+      font-weight: 600;
+      color: $silver;
+
+      @include tablet {
+        font-size: 12px;
+      }
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    ::placeholder {
+      color: $black;
+    }
+  }
+}
+
+.comment {
+  &__name {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $black;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__date {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $silver;
+    
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $black;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 }

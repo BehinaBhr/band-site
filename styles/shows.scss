@@ -16,18 +16,9 @@
   }
 
   &__album-name {
-    font-size: 14px;
-    line-height: 22px;
-    font-weight: 400;
-    color: $white;
     margin: 0;
     z-index: 1;
     padding-bottom: 1rem;
-
-    @include tablet {
-      font-size: 24px;
-      line-height: 32px;
-    }
   }
 
   &__name {
@@ -95,26 +86,14 @@
 
   &__header {
     @extend .table__header;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 600;
     width: calc(100%);
   }
 
   &__title {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-    color: $black;
     margin: 0;
     padding-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
-
-    @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-    }
 
     @include desktop {
       padding-right: $desktop-padding;
@@ -167,31 +146,10 @@
 
     &-title {
       @extend .table__header;
-      font-size: 10px;
-      line-height: 20px;
-      font-weight: 600;
 
       @include tablet {
         display: none;
       }
-    }
-
-    &-content {
-      font-size: 13px;
-      line-height: 18px;
-      font-weight: 400;
-      color: $black;
-
-      @include tablet {
-        font-size: 14px;
-        line-height: 20px;
-      }
-    }
-  }
-
-  &__date {
-    &-content {
-      font-weight: 600;
     }
   }
   // The CTA button width for desktop and tablet will be no

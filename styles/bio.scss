@@ -163,17 +163,9 @@
   padding-bottom: 0;
 
   &__title {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
-    color: $black;
     margin: 0;
-
-    @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-    }
   }
+
   @include tablet {
     padding-left: $tablet-padding;
     padding-right: $tablet-padding;
@@ -203,21 +195,13 @@
     flex-direction: column;
 
     label {
-      font-size: 10px;
-      line-height: 20px;
-      font-weight: 600;
-      color: $silver;
       text-transform: uppercase;
       margin: 0;
       padding-bottom: 0.25rem;
-      @include tablet {
-        font-size: 12px;
-      }
     }
 
     input,
     textarea {
-      font-family: inherit;
       background-color: $lightwhite;
       width: 100%;
       padding: 0.75rem;
@@ -332,39 +316,15 @@
   }
 
   &__name {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 600;
-    color: $black;
     margin: 0;
-    @include tablet {
-      font-size: 14px;
-      line-height: 22px;
-    }
   }
 
   &__date {
     margin: 0;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: $silver;
-    @include tablet {
-      font-size: 14px;
-      line-height: 22px;
-    }
   }
 
   &__text {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: $black;
     margin-bottom: 0;
-    @include tablet {
-      font-size: 14px;
-      line-height: 22px;
-    }
   }
 
   &__avatar {
