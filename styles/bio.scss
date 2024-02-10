@@ -3,108 +3,12 @@
 @use "./partials/mixins" as *;
 @use "./partials/variable" as *;
 
-.header {
-  background-color: $black;
-  display: flex;
-  flex-direction: column;
-
-  @include tablet {
-    flex-direction: row;
-  }
-
-  &__container {
-    display: flex;
-    padding-top: 1rem;
-    align-self: center;
-
-    @include tablet {
-      padding-top: 0;
-      padding-left: $tablet-padding;
-      padding-right: $tablet-padding;
-      justify-content: flex-start;
-    }
-
-    @include desktop {
-      padding-left: $desktop-padding;
-    }
-  }
-
-  &__title {
-    margin: 0;
-  }
-}
-
-.top-nav {
-  background-color: $black;
-
-  &__list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0;
-    padding-top: 0.5rem;
-    margin: 0;
-
-    @include tablet {
-      padding-top: 0;
-      justify-content: flex-start;
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-  }
-
-  &__item {
-    padding: 1rem;
-    flex: 1;
-    text-align: center;
-
-    &--active {
-      border-bottom: 3px solid white;
-    }
-
-    @include tablet {
-      padding: 1.5rem 0;
-      margin: 0 1.25rem;
-    }
-  }
-}
-
 .hero {
   background-image: url("../Assets/Images/hero-bio.jpg");
   height: 12rem;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  position: relative;
 
   @include tablet {
     height: 25rem;
-  }
-
-  &__name {
-    margin: 0;
-    padding-left: 1rem;
-    z-index: 1;
-    @include tablet {
-      padding-left: $tablet-padding;
-    }
-
-    @include desktop {
-      padding-left: $desktop-padding;
-    }
-  }
-
-  &__overlay {
-    background-color: $black;
-    opacity: 50%;
-    position: absolute;
-    width: 100%;
-    height: 100%;
   }
 }
 
@@ -336,9 +240,10 @@
       }
     }
 
-    ::placeholder { /* Most modern browsers support this now. */
-      color:    $black;
-   }
+    ::placeholder {
+      /* Most modern browsers support this now. */
+      color: $black;
+    }
 
     textarea {
       min-height: 6.25rem;
@@ -485,111 +390,4 @@
 
 .error {
   border: 1px solid #d22d2d !important;
-}
-
-.footer {
-  background-color: $black;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  color: white;
-  padding: 1rem;
-  position: relative;
-
-  @include tablet {
-    padding: $tablet-padding;
-    flex-direction: row;
-  }
-
-  @include desktop {
-    padding-right: $desktop-padding;
-    padding-left: $desktop-padding;
-  }
-
-  > * {
-    margin-top: 1rem;
-  }
-
-  &__title {
-    @include tablet {
-      padding-right: $tablet-padding;
-      margin-bottom: 0;
-    }
-
-    @include desktop {
-      width: 13rem;
-      padding-right: calc($desktop-padding / 2);
-    }
-  }
-
-  &__social-media {
-    display: flex;
-
-    @include tablet {
-      align-items: flex-end;
-    }
-  }
-
-  &__icon {
-    margin-right: 1rem;
-
-    @include tablet {
-      margin-right: $tablet-padding;
-      margin-left: 0rem;
-    }
-
-    img {
-      height: 25px;
-    }
-  }
-
-  &__contact-list {
-    display: flex;
-    flex-direction: column;
-
-    @include tablet {
-      justify-content: space-between;
-      width: 100%;
-      flex-direction: row;
-    }
-
-    @include desktop {
-      justify-content: flex-start;
-    }
-  }
-
-  &__contact {
-    margin-bottom: 1rem;
-
-    @include desktop {
-      padding-right: calc($desktop-padding / 2);
-      width: 13rem;
-    }
-  }
-
-  &__name {
-    margin-top: 0;
-  }
-
-  &__logo {
-    margin-bottom: 0;
-    width: 120px;
-    height: 20px;
-
-    @include tablet {
-      position: absolute;
-      top: 3.5rem;
-      right: $tablet-padding;
-    }
-
-    @include desktop {
-      right: $desktop-padding;
-    }
-  }
-
-  &__rights {
-    @include tablet {
-      margin: 0;
-    }
-  }
 }
