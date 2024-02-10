@@ -160,16 +160,19 @@
 
 .join {
   padding: 1rem;
-  padding-bottom: 0;
+  padding-bottom: 1rem;
 
   &__title {
     margin: 0;
   }
 
   @include tablet {
-    padding-left: $tablet-padding;
-    padding-right: $tablet-padding;
-    padding-top: $tablet-padding;
+    padding: $tablet-padding;
+  }
+
+  @include desktop {
+    padding-left: $desktop-padding;
+    padding-right: $desktop-padding;
   }
 }
 
@@ -181,16 +184,21 @@
   border-bottom: 1px solid $lightsilver;
 
   @include tablet {
-    padding-right: $tablet-mid-padding;
-    padding-left: $tablet-mid-padding;
+    margin-right: $tablet-mid-padding;
+    margin-left: $tablet-mid-padding;
   }
-
+  
+  @include desktop {
+    // width: 50;
+  }
+  
   &__info {
     width: 100%;
+    padding-left: 1rem;
   }
 
   &__input-wrapper {
-    padding: 0 0 1rem 1rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
 
@@ -259,7 +267,6 @@
 
   &__button-wrapper {
     display: flex;
-    padding: 0rem 0 0 1rem;
 
     @include tablet {
       justify-content: flex-end;
@@ -283,13 +290,11 @@
 }
 
 .comments {
-  padding: 1rem;
   padding-top: 0;
 
   @include tablet {
-    padding-right: $tablet-big-padding;
-    padding-left: $tablet-big-padding;
-    padding-bottom: $tablet-padding;
+    padding-right: $tablet-mid-padding;
+    padding-left: $tablet-mid-padding;
   }
 }
 

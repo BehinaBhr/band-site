@@ -13,16 +13,86 @@
   font-weight: 700;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
-.header__title {
+.page-header-font, .hero__name {
   font-size: 24px;
   line-height: 32px;
+}
+@media (min-width: 768px) {
+  .page-header-font, .hero__name {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+.bandsite, .footer__logo, .header__title {
+  font-size: 24px;
   font-weight: 400;
+}
+
+.header-font, .join__title, .shows__title, .gallary__title, .about__title {
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  .header-font, .join__title, .shows__title, .gallary__title, .about__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.subheader-font, .band__name, .slogan, .hero__album-name {
+  font-size: 14px;
+  line-height: 22px;
+}
+@media (min-width: 768px) {
+  .subheader-font, .band__name, .slogan, .hero__album-name {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+  font-size: 13px;
+  line-height: 18px;
+}
+@media (min-width: 768px) {
+  .body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.footer-body-font, .footer__name, .footer {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.footer-header-font, .footer__title {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.lable-button-font, .form__input-wrapper label, .show__date-title, .show__venue-title, .show__location-title, .footer__rights {
+  font-size: 10px;
+  line-height: 20px;
+}
+@media (min-width: 768px) {
+  .lable-button-font, .form__input-wrapper label, .show__date-title, .show__venue-title, .show__location-title, .footer__rights {
+    font-size: 12px;
+  }
+}
+
+.button, .form__button {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.header__title {
   color: #ffffff;
 }
 
 .top-nav__item {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   color: #ffffff;
 }
@@ -32,139 +102,48 @@
 }
 
 .hero__name {
-  font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
   color: #ffffff;
 }
-@media (min-width: 768px) {
-  .hero__name {
-    font-size: 60px;
-    line-height: 68px;
-  }
-}
 .hero__album-name {
-  font-size: 14px;
-  line-height: 22px;
   font-weight: 400;
   color: #ffffff;
-}
-@media (min-width: 768px) {
-  .hero__album-name {
-    font-size: 24px;
-    line-height: 32px;
-  }
 }
 
 .about__title {
-  font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
   color: #323232;
-}
-@media (min-width: 768px) {
-  .about__title {
-    font-size: 36px;
-    line-height: 44px;
-  }
 }
 
 .slogan {
-  font-size: 14px;
-  line-height: 22px;
   font-weight: 600;
   color: #323232;
 }
-@media (min-width: 768px) {
-  .slogan {
-    font-size: 24px;
-    line-height: 32px;
-  }
-}
-@media (min-width: 768px) {
-  .slogan__quoter {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
-
 .band__name {
-  font-size: 14px;
-  line-height: 22px;
   font-weight: 600;
   color: #323232;
-}
-@media (min-width: 768px) {
-  .band__name {
-    font-size: 24px;
-    line-height: 32px;
-  }
 }
 .band__description {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   color: #323232;
-}
-@media (min-width: 768px) {
-  .band__description {
-    font-size: 14px;
-    line-height: 22px;
-  }
 }
 
 .gallary__title {
-  font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
   color: #323232;
 }
-@media (min-width: 768px) {
-  .gallary__title {
-    font-size: 36px;
-    line-height: 44px;
-  }
-}
 
 .footer {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
 }
-@media (min-width: 768px) {
-  .footer {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
 .footer__title {
-  font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
-}
-@media (min-width: 768px) {
-  .footer__title {
-    font-size: 36px;
-    line-height: 44px;
-  }
 }
 .footer__name {
-  font-size: 14px;
-  line-height: 22px;
   font-weight: 600;
 }
-.footer__logo {
-  font-size: 23px;
-}
 .footer__rights {
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: 700;
-}
-@media (min-width: 768px) {
-  .footer__rights {
-    font-size: 12px;
-  }
+  font-weight: 400;
 }
 
 .shows__header {
@@ -173,62 +152,29 @@
   font-weight: 600;
 }
 .shows__title {
-  font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
   color: #323232;
-}
-@media (min-width: 768px) {
-  .shows__title {
-    font-size: 36px;
-    line-height: 44px;
-  }
 }
 
 .show__date-title, .show__venue-title, .show__location-title {
-  font-size: 10px;
-  line-height: 20px;
   font-weight: 600;
 }
 .show__date-content, .show__venue-content, .show__location-content {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   color: #323232;
-}
-@media (min-width: 768px) {
-  .show__date-content, .show__venue-content, .show__location-content {
-    font-size: 14px;
-    line-height: 20px;
-  }
 }
 .show__date-content {
   font-weight: 600;
 }
 
 .join__title {
-  font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
   color: #323232;
 }
-@media (min-width: 768px) {
-  .join__title {
-    font-size: 36px;
-    line-height: 44px;
-  }
-}
 
 .form__input-wrapper label {
-  font-size: 10px;
-  line-height: 20px;
   font-weight: 600;
   color: #afafaf;
-}
-@media (min-width: 768px) {
-  .form__input-wrapper label {
-    font-size: 12px;
-  }
 }
 .form__input-wrapper input,
 .form__input-wrapper textarea {
@@ -242,40 +188,16 @@
 }
 
 .comment__name {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 600;
   color: #323232;
 }
-@media (min-width: 768px) {
-  .comment__name {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
 .comment__date {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   color: #afafaf;
 }
-@media (min-width: 768px) {
-  .comment__date {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
 .comment__text {
-  font-size: 13px;
-  line-height: 18px;
   font-weight: 400;
   color: #323232;
-}
-@media (min-width: 768px) {
-  .comment__text {
-    font-size: 14px;
-    line-height: 22px;
-  }
 }
 
 body {
@@ -400,19 +322,20 @@ a {
 
 .button, .form__button {
   background-color: #323232;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 400;
   color: #ffffff;
   width: 100%;
+  min-width: 9.3rem;
   height: 40px;
   border: none;
   border-radius: 4px;
   word-spacing: 3px;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 @media (min-width: 768px) {
   .button, .form__button {
     width: 9.3rem;
+    padding: 0;
   }
 }
 .button:hover, .form__button:hover {
@@ -451,7 +374,7 @@ a {
 }
 @media (min-width: 1280px) {
   .footer__title {
-    width: 13rem;
+    width: 15rem;
     padding-right: 3rem;
   }
 }
@@ -497,7 +420,7 @@ a {
 @media (min-width: 1280px) {
   .footer__contact {
     padding-right: 3rem;
-    width: 13rem;
+    width: 15rem;
   }
 }
 .footer__name {
@@ -690,16 +613,20 @@ a {
 
 .join {
   padding: 1rem;
-  padding-bottom: 0;
+  padding-bottom: 1rem;
 }
 .join__title {
   margin: 0;
 }
 @media (min-width: 768px) {
   .join {
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
-    padding-top: 2.25rem;
+    padding: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .join {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 
@@ -712,15 +639,16 @@ a {
 }
 @media (min-width: 768px) {
   .form {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 }
 .form__info {
   width: 100%;
+  padding-left: 1rem;
 }
 .form__input-wrapper {
-  padding: 0 0 1rem 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -792,7 +720,6 @@ a {
 }
 .form__button-wrapper {
   display: flex;
-  padding: 0rem 0 0 1rem;
 }
 @media (min-width: 768px) {
   .form__button-wrapper {
@@ -815,14 +742,12 @@ a {
 }
 
 .comments {
-  padding: 1rem;
   padding-top: 0;
 }
 @media (min-width: 768px) {
   .comments {
-    padding-right: 5.25rem;
-    padding-left: 5.25rem;
-    padding-bottom: 2.25rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 }
 

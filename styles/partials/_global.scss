@@ -128,18 +128,19 @@ a {
 
 .button {
   background-color: $black;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 400;
   color: $white;
   width: 100%;
+  min-width: $button-width-tablet-desktop;
   height: 40px;
   border: none;
   border-radius: 4px;
   word-spacing: 3px;
+  padding-right: 2rem;
+  padding-left: 2rem;
 
   @include tablet {
     width: $button-width-tablet-desktop;
+    padding: 0;
   }
 
   &:hover {
@@ -177,7 +178,7 @@ a {
     }
 
     @include desktop {
-      width: 13rem;
+      width: 15rem;
       padding-right: calc($desktop-padding / 2);
     }
   }
@@ -223,7 +224,7 @@ a {
 
     @include desktop {
       padding-right: calc($desktop-padding / 2);
-      width: 13rem;
+      width: 15rem;
     }
   }
 
