@@ -56,6 +56,13 @@
   flex-direction: column;
   padding: 1.5rem 0 0.75rem 0;
 
+  @include tablet {
+    padding-left: calc($tablet-padding - 1rem);
+    padding-right: calc($tablet-padding - 1rem);
+    padding-top: $tablet-mid-padding;
+    padding-bottom: $tablet-padding;
+  }
+
   @include desktop {
     flex-direction: row;
     justify-content: space-between;
@@ -74,10 +81,26 @@
     }
   }
 
+  &__title {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    @include tablet {
+      padding-bottom: $tablet-padding;
+    }
+
+    @include desktop {
+      padding-right: $desktop-padding;
+      padding-left: 0;
+    }
+  }
+
   &__header-container {
     @extend .table;
     display: none;
-    padding-bottom: 1.25rem;
+    padding-bottom: .5rem;
 
     @include tablet {
       display: flex;
@@ -87,17 +110,6 @@
   &__header {
     @extend .table__header;
     width: calc(100%);
-  }
-
-  &__title {
-    margin: 0;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    @include desktop {
-      padding-right: $desktop-padding;
-    }
   }
 }
 
