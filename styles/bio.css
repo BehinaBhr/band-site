@@ -157,18 +157,12 @@
 
 body {
   margin: 0;
-  font-family: "AvenirNextLTPro" !important;
+  font-family: "AvenirNextLTPro";
 }
 
 a {
   text-decoration: none;
   color: white;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
 }
 
 .header {
@@ -644,6 +638,7 @@ a {
 
 .join {
   padding: 1rem;
+  padding-bottom: 0;
 }
 .join__title {
   font-size: 24px;
@@ -651,7 +646,6 @@ a {
   font-weight: 600;
   color: #323232;
   margin: 0;
-  padding: 0 1rem 0 0;
 }
 @media (min-width: 768px) {
   .join__title {
@@ -661,7 +655,9 @@ a {
 }
 @media (min-width: 768px) {
   .join {
-    padding: 2.25rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    padding-top: 2.25rem;
   }
 }
 
@@ -695,6 +691,11 @@ a {
   margin: 0;
   padding-bottom: 0.25rem;
 }
+@media (min-width: 768px) {
+  .form__input-wrapper label {
+    font-size: 12px;
+  }
+}
 .form__input-wrapper input,
 .form__input-wrapper textarea {
   font-family: inherit;
@@ -704,6 +705,7 @@ a {
   border: 1px solid #e1e1e1;
   border-radius: 4px;
   box-sizing: border-box;
+  min-height: 3rem;
 }
 @media (min-width: 1280px) {
   .form__input-wrapper input,
@@ -721,6 +723,15 @@ a {
 .form__input-wrapper textarea:active,
 .form__input-wrapper textarea:focus {
   border: 1px solid #323232;
+}
+.form__input-wrapper ::-moz-placeholder { /* Most modern browsers support this now. */
+  color: #323232;
+}
+.form__input-wrapper ::placeholder { /* Most modern browsers support this now. */
+  color: #323232;
+}
+.form__input-wrapper textarea {
+  min-height: 6.25rem;
 }
 .form__avatar, .comment__avatar {
   width: 2.25rem;
@@ -789,12 +800,24 @@ a {
   padding: 1rem;
   padding-top: 0;
 }
+@media (min-width: 768px) {
+  .comments {
+    padding-right: 5.25rem;
+    padding-left: 5.25rem;
+    padding-bottom: 2.25rem;
+  }
+}
 
 .comment {
   display: flex;
   flex-direction: row;
-  margin: 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .comment {
+    padding: 1.5rem 0;
+  }
 }
 .comment__info {
   display: flex;
@@ -811,22 +834,42 @@ a {
   line-height: 18px;
   font-weight: 600;
   color: #323232;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .comment__name {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 .comment__date {
-  margin-top: 0.8rem;
+  margin: 0;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
   color: #afafaf;
+}
+@media (min-width: 768px) {
+  .comment__date {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 .comment__text {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
   color: #323232;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .comment__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 .comment__avatar {
-  margin-top: 0.7rem;
+  margin: 0rem;
 }
 .comment__avatar--empty {
   background-color: #e1e1e1;

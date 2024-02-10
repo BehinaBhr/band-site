@@ -123,7 +123,8 @@
     margin: 0;
     padding: 1.5rem 1rem 1rem 1rem;
     @include tablet {
-      padding: 3rem $tablet-padding $tablet-padding $tablet-padding;
+      padding: $tablet-mid-padding $tablet-padding $tablet-padding
+        $tablet-padding;
     }
 
     @include desktop {
@@ -208,7 +209,7 @@
     margin: 0;
 
     @include tablet {
-      padding: 3rem $tablet-padding 0rem $tablet-padding;
+      padding: $tablet-mid-padding $tablet-padding 0rem $tablet-padding;
     }
 
     @include desktop {
@@ -255,21 +256,24 @@
 
 .join {
   padding: 1rem;
+  padding-bottom: 0;
 
   &__title {
     font-size: 24px;
     line-height: 32px;
     font-weight: 600;
     color: $black;
+    margin: 0;
+
     @include tablet {
       font-size: 36px;
       line-height: 44px;
     }
-    margin: 0;
-    padding: 0 1rem 0 0;
   }
   @include tablet {
-    padding: $tablet-padding;
+    padding-left: $tablet-padding;
+    padding-right: $tablet-padding;
+    padding-top: $tablet-padding;
   }
 }
 
@@ -279,10 +283,12 @@
   padding-bottom: 1rem;
   padding-top: 1rem;
   border-bottom: 1px solid $lightsilver;
+
   @include tablet {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-right: $tablet-mid-padding;
+    padding-left: $tablet-mid-padding;
   }
+
   &__info {
     width: 100%;
   }
@@ -300,6 +306,9 @@
       text-transform: uppercase;
       margin: 0;
       padding-bottom: 0.25rem;
+      @include tablet {
+        font-size: 12px;
+      }
     }
 
     input,
@@ -311,16 +320,28 @@
       border: 1px solid $form-border-color;
       border-radius: 4px;
       box-sizing: border-box;
+      min-height: 3rem;
+
       @include desktop {
         padding: 1rem;
       }
+
       @include tablet {
         padding: 1rem;
       }
+
       &:active,
       &:focus {
         border: 1px solid $black;
       }
+    }
+
+    ::placeholder { /* Most modern browsers support this now. */
+      color:    $black;
+   }
+
+    textarea {
+      min-height: 6.25rem;
     }
   }
 
@@ -351,8 +372,8 @@
     display: flex;
     padding: 0rem 0 0 1rem;
 
-    @include tablet{
-      justify-content:flex-end;
+    @include tablet {
+      justify-content: flex-end;
     }
   }
   &__button {
@@ -378,6 +399,7 @@
 
 #comment-name {
   min-height: 2.25rem;
+
   @include tablet {
     min-height: 3rem;
   }
@@ -386,46 +408,74 @@
 .comments {
   padding: 1rem;
   padding-top: 0;
+
+  @include tablet {
+    padding-right: $tablet-big-padding;
+    padding-left: $tablet-big-padding;
+    padding-bottom: $tablet-padding;
+  }
 }
 .comment {
   display: flex;
   flex-direction: row;
-  margin: 0;
+  padding: 1rem 0;
   border-bottom: 1px solid $lightsilver;
+
+  @include tablet {
+    padding: 1.5rem 0;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
     padding-left: 1rem;
     width: 100%;
   }
+
   &__header {
     display: flex;
     justify-content: space-between;
   }
+
   &__name {
     font-size: 13px;
     line-height: 18px;
     font-weight: 600;
     color: $black;
+    margin: 0;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
+
   &__date {
-    //??
-    margin-top: 0.8rem;
+    margin: 0;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     color: $silver;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
+
   &__text {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     color: $black;
+    margin-bottom: 0;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 
   &__avatar {
     @extend .form__avatar;
-    margin-top: 0.7rem;
+    margin: 0rem;
 
     &--empty {
       background-color: $lightsilver;
