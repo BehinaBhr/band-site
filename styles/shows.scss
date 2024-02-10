@@ -76,8 +76,8 @@
   @include desktop {
     flex-direction: row;
     justify-content: space-between;
-    padding-right: $desktop-padding;
-    padding-left: $desktop-padding;
+    padding-right: calc($desktop-padding - 1rem);
+    padding-left: calc($desktop-padding - 1rem);
   }
 
   &__list {

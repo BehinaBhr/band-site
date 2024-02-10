@@ -531,8 +531,8 @@ a {
   .shows {
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
   }
 }
 .shows__list > * {
