@@ -313,20 +313,19 @@
 
   &__avatar {
     width: 2.25rem;
-    height: 2.2rem;
+    height: 2.25rem;
     min-width: 2.25rem;
     min-height: 2.25rem;
     border-radius: 50%;
     overflow: hidden;
     margin-top: 1.7rem;
 
-    // @include desktop {
-
-    // }
-
-    // @include tablet {
-
-    // }
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
+      min-width: 3rem;
+      min-height: 3rem;
+    }
   }
 
   &__avatar-image {
