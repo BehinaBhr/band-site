@@ -248,16 +248,17 @@ a {
   position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 1rem;
 }
 @media (min-width: 768px) {
   .hero {
     padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .hero {
     padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 .hero__name {

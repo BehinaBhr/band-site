@@ -4,19 +4,21 @@
 @use "./variable" as *;
 
 body {
-    margin: 0;
-    font-family: "AvenirNextLTPro";
+  margin: 0;
+  font-family: "AvenirNextLTPro";
 }
 
 a {
-    text-decoration: none;
-    color: white;
-  }
-  
-*, *::after, *::before{
-    // border:0.5px dashed red;
-    box-sizing: border-box;
-    // margin: 0;
+  text-decoration: none;
+  color: white;
+}
+
+*,
+*::after,
+*::before {
+  // border:0.5px dashed red;
+  box-sizing: border-box;
+  // margin: 0;
 }
 
 .header {
@@ -24,7 +26,7 @@ a {
   display: flex;
   flex-direction: column;
 
-  @include tablet{
+  @include tablet {
     flex-direction: row;
   }
 
@@ -63,9 +65,9 @@ a {
     margin: 0;
 
     @include tablet {
-    padding-top: 0;
+      padding-top: 0;
       justify-content: flex-start;
-      }
+    }
   }
 
   &__link {
@@ -89,30 +91,28 @@ a {
 }
 
 .hero {
-  background-image: url("../Assets/Images/hero-bio.jpg");
-  height: 12rem;
   width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   @include tablet {
-  height: 25rem;
+    padding-left: $tablet-padding;
+    padding-right: $tablet-padding;
+  }
+
+  @include desktop {
+    padding-left: $desktop-padding;
+    padding-right: $desktop-padding;
   }
 
   &__name {
     margin: 0;
-    padding-left: 1rem;
     z-index: 1;
-    @include tablet{
-      padding-left: $tablet-padding;
-    }
-
-    @include desktop {
-      padding-left: $desktop-padding;
-    }
   }
 
   &__overlay {
@@ -121,6 +121,8 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
+    left: 0;
+    top: 0;
   }
 }
 
@@ -142,7 +144,7 @@ a {
     padding-right: $desktop-padding;
     padding-left: $desktop-padding;
   }
-  
+
   > * {
     margin-top: 1rem;
   }
@@ -184,7 +186,6 @@ a {
     display: flex;
     flex-direction: column;
 
-
     @include tablet {
       justify-content: space-between;
       width: 100%;
@@ -213,7 +214,7 @@ a {
     margin-bottom: 0;
     width: 120px;
     height: 20px;
-  
+
     @include tablet {
       position: absolute;
       top: 3.5rem;

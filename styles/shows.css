@@ -240,34 +240,30 @@ a {
 }
 
 .hero {
-  background-image: url("../Assets/Images/hero-bio.jpg");
-  height: 12rem;
   width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 @media (min-width: 768px) {
   .hero {
-    height: 25rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 }
 .hero__name {
   margin: 0;
-  padding-left: 1rem;
   z-index: 1;
-}
-@media (min-width: 768px) {
-  .hero__name {
-    padding-left: 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .hero__name {
-    padding-left: 6rem;
-  }
 }
 .hero__overlay {
   background-color: #323232;
@@ -275,6 +271,8 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .footer {
@@ -389,41 +387,67 @@ a {
   flex-direction: column;
   align-items: flex-start;
   height: 20rem;
+  padding-top: 1.5rem;
 }
-.hero__name {
-  padding-bottom: 1rem;
+@media (min-width: 768px) {
+  .hero {
+    height: 30rem;
+    padding-top: 3rem;
+  }
 }
 .hero__album-name {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 22px;
   font-weight: 400;
   color: #ffffff;
   margin: 0;
   z-index: 1;
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .hero__album-name {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.hero__name {
+  width: 70%;
+  padding-bottom: 1rem;
 }
 .hero__song {
-  z-index: 2;
+  font-size: 10px;
+  width: 100%;
   height: 7rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  align-self: stretch;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .hero__song {
+    width: 30rem;
+  }
 }
 
+.shows {
+  padding: 1.5rem 0 0.75rem 0;
+}
+.shows > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .shows__title {
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
   color: #323232;
   margin: 0;
-  padding: 1.5rem 1rem 0rem 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .show {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #e1e1e1;
 }
 .show:hover {
@@ -467,8 +491,4 @@ a {
 }
 .show__ticket:hover {
   background-color: #000000;
-}
-
-.footer {
-  margin-top: 1rem;
 }/*# sourceMappingURL=shows.css.map */
