@@ -1,165 +1,282 @@
 @use "colors" as *;
 @use "./mixins" as *;
 
+
 @font-face {
-  font-family: regularFont;
+  // font-family: regularFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 400;
   src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
 }
 
 @font-face {
-  font-family: demiFont;
+  // font-family: demiFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 600;
   src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
 }
 
 @font-face {
-  font-family: boldFont;
+  // font-family: boldFont;
+  font-family: "AvenirNextLTPro";
+  font-weight: 700;
   src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
 }
 
+.page-header-font {
+  font-size: 24px;
+  line-height: 32px;
 
+  @include tablet {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
 
-.header {
-  &__title {
+.bandsite {
+  font-size: 24px;
+  // line-height: 32px;
+  font-weight: 400;
+}
+
+.header-font {
+  font-size: 24px;
+  line-height: 32px;
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.subheader-font {
+  font-size: 14px;
+  line-height: 22px;
+
+  @include tablet {
     font-size: 24px;
     line-height: 32px;
-    font-family: regularFont;
+  }
+}
+
+.body-font {
+  font-size: 13px;
+  line-height: 18px;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.footer-body-font {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.footer-header-font {
+  font-size: 24px;
+  line-height: 32px;
+  
+  @include tablet {
+    font-size: 30px;
+  }
+}
+
+.lable-button-font {
+    font-size: 10px;
+    line-height: 20px;
+
+    @include tablet {
+      font-size: 12px;
+    }
+}
+
+.button {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.header { 
+  &__title {
+    @extend .bandsite;
     color: $white;
   }
 }
 
 .top-nav {
-
+  // mashkook
   &__item {
-    font-size: 13px;
-    line-height: 18px;
-    font-family: regularFont;
+    @extend .body-font;
+    font-weight: 400;
     color: $white;
 
     &--active{
       color: red;
-      font-family: demiFont;
+      font-weight: 600;
     }
   }
 }
 
 .hero {
   &__name {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: demiFont;
+    @extend .page-header-font;
+    font-weight: 600;
     color: $white;
-    @include tablet {
-      font-size: 60px;
-      line-height: 68px;
-    }
+  }
+
+  &__album-name {
+    @extend .subheader-font;
+    font-weight: 400;
+    color: $white;
   }
 }
 
 .about {
   &__title {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: demiFont;
+    @extend .header-font;
+    font-weight: 600;
     color: $black;
-    @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-    }
   }
 }
 
 .slogan {
-  font-size: 14px;
-  line-height: 22px;
-  font-family: demiFont;
+  @extend .subheader-font;
+  font-weight: 600;
   color: $black;
-  @include tablet {
-    font-size: 24px;
-    line-height: 32px;
-  }
+
   &__quoter {
-    @include tablet {
-      font-size: 14px;
-      line-height: 22px;
-    }
+    @extend .body-font;
   }
 }
 
 .band {
   &__name {
-    font-size: 14px;
-    line-height: 22px;
-    font-family: demiFont;
+    @extend .subheader-font;
+    font-weight: 600;
     color: $black;
-    @include tablet {
-      font-size: 24px;
-      line-height: 32px;
-    }
   }
 
   &__description {
-    font-size: 13px;
-    line-height: 18px;
-    font-family: regularFont;
+    @extend .body-font;
+    font-weight: 400;
     color: $black;
-    @include tablet {
-      font-size: 14px;
-      line-height: 22px;
-    }
   }
 }
 
 .gallary {
   &__title {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: demiFont;
+    @extend .header-font;
+    font-weight: 600;
     color: $black;
-    @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-    }
   }
 }
 
 .footer {
-  font-size: 13px;
-  line-height: 18px;
-  font-family: regularFont;
-
-  @include tablet {
-    font-size: 14px;
-    line-height: 20px;
-  }
+  @extend .footer-body-font;
+  font-weight: 400;
 
   &__title {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: demiFont;
-
-    @include tablet {
-      font-size: 36px;
-      line-height: 44px;
-    }
+    @extend .footer-header-font;
+    font-weight: 600;
   }
 
   &__name {
-    font-size: 14px;
-    line-height: 22px;
-    font-family: demiFont;
+    @extend .footer-body-font;
+    font-weight: 600;
   }
 
   &__logo {
-    font-size: 23px;
+    @extend .bandsite;
   }
 
   &__rights {
-    font-size: 10px;
-    line-height: 20px;
-    font-weight: 700;
+    @extend .lable-button-font;
+    font-weight: 400;
+  }
+}
 
-    @include tablet {
-      font-size: 12px;
+.shows {
+  &__header {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  &__title {
+    @extend .header-font;
+    font-weight: 600;
+    color: $black;
+  }
+}
+
+.show {
+  &__date,
+  &__venue,
+  &__location {
+    &-title {
+      @extend .lable-button-font;
+      font-weight: 600;
     }
+
+    &-content {
+      @extend .body-font;
+      font-weight: 400;
+      color: $black;
+    }
+  }
+
+  &__date {
+    &-content {
+      font-weight: 600;
+    }
+  }
+}
+
+.join {
+  &__title {
+    @extend .header-font;
+    font-weight: 600;
+    color: $black;
+  }
+}
+
+.form {
+  &__input-wrapper {
+    label {
+      @extend .lable-button-font;
+      font-weight: 600;
+      color: $silver;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    ::placeholder {
+      color: $black;
+    }
+  }
+}
+
+.comment {
+  &__name {
+    @extend .body-font;
+    font-weight: 600;
+    color: $black;
+  }
+
+  &__date {
+    @extend .body-font;
+    font-weight: 400;
+    color: $silver;
+  }
+
+  &__text {
+    @extend .body-font;
+    font-weight: 400;
+    color: $black;
   }
 }

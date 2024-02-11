@@ -1,0 +1,195 @@
+@use "./partials/global" as *;
+@use "./partials/colors" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variable" as *;
+
+.hero {
+  background-image: url("../Assets/Images/hero-shows.jpg");
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  height: 20rem;
+
+  @include tablet {
+    padding-top: $tablet-mid-padding;
+    background-position-y: -5rem;
+  }
+
+  @include desktop {
+    background-position-y: -10rem; 
+    flex-direction: row;
+    padding-top: 0;
+    align-items: center;
+  }
+
+  &__info {
+    z-index: 2;
+  }
+
+  &__album-name {
+    margin: 0;
+    z-index: 1;
+    padding-bottom: 1rem;
+  }
+
+  &__name {
+    width: 70%;
+    padding-bottom: 1rem;
+  }
+
+  &__song {
+    width: 100%;
+    height: 7rem;
+    z-index: 2;
+
+    @include tablet {
+      width: 30rem;
+    }
+  }
+}
+
+.table {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - $button-width-tablet-desktop);
+  }
+
+  &__header {
+    color: $silver;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 0.75rem 0;
+
+  @include tablet {
+    padding-left: calc($tablet-padding - 1rem);
+    padding-right: calc($tablet-padding - 1rem);
+    padding-top: $tablet-mid-padding;
+    padding-bottom: $tablet-padding;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: calc($desktop-padding - 1rem);
+    padding-left: $desktop-padding;
+  }
+
+  &__list {
+    & > * {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    @include tablet {
+      padding-bottom: $tablet-padding;
+    }
+
+    @include desktop {
+      padding-right: $desktop-padding;
+      padding-left: 0;
+    }
+  }
+
+  &__header-container {
+    @extend .table;
+    display: none;
+    padding-bottom: .5rem;
+
+    @include tablet {
+      display: flex;
+    }
+
+    @include desktop {
+      padding-top: 1rem;
+    }
+  }
+
+  &__header {
+    @extend .table__header;
+    width: calc(100%);
+  }
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $lightsilver;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &:hover {
+    background-color: $lightsilver;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $lightwhite;
+  }
+
+  &__info {
+    @extend .table;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__date,
+  &__venue,
+  &__location {
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 100%;
+    }
+
+    &-title {
+      @extend .table__header;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+  // The CTA button width for desktop and tablet will be no
+  // less than 150px,
+  // and have no less than 32px of padding left & right.
+  // The CTA button for mobile should span the entire width of its container.
+
+  &__ticket {
+    @extend .button;
+    margin-top: 1.2rem;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+}

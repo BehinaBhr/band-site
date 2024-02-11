@@ -1,0 +1,646 @@
+@font-face {
+  font-family: "AvenirNextLTPro";
+  font-weight: 400;
+  src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "AvenirNextLTPro";
+  font-weight: 600;
+  src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("truetype");
+}
+@font-face {
+  font-family: "AvenirNextLTPro";
+  font-weight: 700;
+  src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("truetype");
+}
+.page-header-font, .hero__name {
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  .page-header-font, .hero__name {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+.bandsite, .footer__logo, .header__title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.header-font, .join__title, .shows__title, .gallary__title, .about__title {
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  .header-font, .join__title, .shows__title, .gallary__title, .about__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.subheader-font, .band__name, .slogan, .hero__album-name {
+  font-size: 14px;
+  line-height: 22px;
+}
+@media (min-width: 768px) {
+  .subheader-font, .band__name, .slogan, .hero__album-name {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+  font-size: 13px;
+  line-height: 18px;
+}
+@media (min-width: 768px) {
+  .body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.footer-body-font, .footer__name, .footer {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.footer-header-font, .footer__title {
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (min-width: 768px) {
+  .footer-header-font, .footer__title {
+    font-size: 30px;
+  }
+}
+
+.lable-button-font, .form__input-wrapper label, .show__date-title, .show__venue-title, .show__location-title, .footer__rights {
+  font-size: 10px;
+  line-height: 20px;
+}
+@media (min-width: 768px) {
+  .lable-button-font, .form__input-wrapper label, .show__date-title, .show__venue-title, .show__location-title, .footer__rights {
+    font-size: 12px;
+  }
+}
+
+.button, .show__ticket {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.header__title {
+  color: #ffffff;
+}
+
+.top-nav__item {
+  font-weight: 400;
+  color: #ffffff;
+}
+.top-nav__item--active {
+  color: red;
+  font-weight: 600;
+}
+
+.hero__name {
+  font-weight: 600;
+  color: #ffffff;
+}
+.hero__album-name {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.about__title {
+  font-weight: 600;
+  color: #323232;
+}
+
+.slogan {
+  font-weight: 600;
+  color: #323232;
+}
+.band__name {
+  font-weight: 600;
+  color: #323232;
+}
+.band__description {
+  font-weight: 400;
+  color: #323232;
+}
+
+.gallary__title {
+  font-weight: 600;
+  color: #323232;
+}
+
+.footer {
+  font-weight: 400;
+}
+.footer__title {
+  font-weight: 600;
+}
+.footer__name {
+  font-weight: 600;
+}
+.footer__rights {
+  font-weight: 400;
+}
+
+.shows__header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.shows__title {
+  font-weight: 600;
+  color: #323232;
+}
+
+.show__date-title, .show__venue-title, .show__location-title {
+  font-weight: 600;
+}
+.show__date-content, .show__venue-content, .show__location-content {
+  font-weight: 400;
+  color: #323232;
+}
+.show__date-content {
+  font-weight: 600;
+}
+
+.join__title {
+  font-weight: 600;
+  color: #323232;
+}
+
+.form__input-wrapper label {
+  font-weight: 600;
+  color: #afafaf;
+}
+.form__input-wrapper input,
+.form__input-wrapper textarea {
+  font-family: inherit;
+}
+.form__input-wrapper ::-moz-placeholder {
+  color: #323232;
+}
+.form__input-wrapper ::placeholder {
+  color: #323232;
+}
+
+.comment__name {
+  font-weight: 600;
+  color: #323232;
+}
+.comment__date {
+  font-weight: 400;
+  color: #afafaf;
+}
+.comment__text {
+  font-weight: 400;
+  color: #323232;
+}
+
+body {
+  margin: 0;
+  font-family: "AvenirNextLTPro";
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+}
+.header__container {
+  display: flex;
+  padding-top: 1rem;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .header__container {
+    padding-top: 0;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .header__container {
+    padding-left: 6rem;
+  }
+}
+.header__title {
+  margin: 0;
+}
+
+.top-nav {
+  background-color: #323232;
+}
+.top-nav__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  padding-top: 0.5rem;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .top-nav__list {
+    padding-top: 0;
+    justify-content: flex-start;
+  }
+}
+.top-nav__link {
+  text-decoration: none;
+}
+.top-nav__item {
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+.top-nav__item--active {
+  border-bottom: 3px solid white;
+}
+@media (min-width: 768px) {
+  .top-nav__item {
+    padding: 1.5rem 0;
+    margin: 0 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .top-nav__item {
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 4rem;
+    margin-right: 0.75rem;
+  }
+}
+
+.hero {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    height: 28rem !important;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    height: 40rem !important;
+  }
+}
+.hero__name {
+  margin: 0;
+  z-index: 1;
+}
+.hero__overlay {
+  background-color: #323232;
+  opacity: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.button, .show__ticket {
+  background-color: #323232;
+  color: #ffffff;
+  width: 100%;
+  min-width: 9.3rem;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  word-spacing: 3px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+@media (min-width: 768px) {
+  .button, .show__ticket {
+    width: 9.3rem;
+    padding: 0;
+  }
+}
+.button:hover, .show__ticket:hover {
+  background-color: #000000;
+}
+
+.footer {
+  background-color: #323232;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  color: white;
+  padding: 1rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.25rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
+.footer > * {
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer > * {
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer__title {
+    padding-right: 2.25rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__title {
+    width: 15rem;
+    padding-right: 3rem;
+  }
+}
+.footer__social-media {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .footer__social-media {
+    align-items: flex-end;
+  }
+}
+.footer__icon {
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__icon {
+    margin-right: 2.25rem;
+    margin-left: 0rem;
+  }
+}
+.footer__icon img {
+  height: 25px;
+}
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .footer__contact-list {
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+    padding-top: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__contact-list {
+    justify-content: flex-start;
+  }
+}
+.footer__contact {
+  margin-bottom: 1rem;
+}
+@media (min-width: 1280px) {
+  .footer__contact {
+    padding-right: 3rem;
+    width: 15rem;
+  }
+}
+.footer__name {
+  margin-top: 0;
+}
+.footer__logo {
+  margin-bottom: 0;
+  width: 120px;
+  height: 20px;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    position: absolute;
+    top: 2.75rem;
+    right: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer__logo {
+    right: 6rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer__rights {
+    margin: 0;
+  }
+}
+
+.hero {
+  background-image: url("../Assets/Images/hero-shows.jpg");
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  height: 20rem;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 3rem;
+    background-position-y: -5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    background-position-y: -10rem;
+    flex-direction: row;
+    padding-top: 0;
+    align-items: center;
+  }
+}
+.hero__info {
+  z-index: 2;
+}
+.hero__album-name {
+  margin: 0;
+  z-index: 1;
+  padding-bottom: 1rem;
+}
+.hero__name {
+  width: 70%;
+  padding-bottom: 1rem;
+}
+.hero__song {
+  width: 100%;
+  height: 7rem;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .hero__song {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .table, .show__info, .shows__header-container {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 9.3rem);
+  }
+}
+.table__header, .show__date-title, .show__venue-title, .show__location-title, .shows__header {
+  color: #afafaf;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0 0.75rem 0;
+}
+@media (min-width: 768px) {
+  .shows {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5rem;
+    padding-left: 6rem;
+  }
+}
+.shows__list > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 1280px) {
+  .shows__list {
+    width: 100%;
+  }
+}
+.shows__title {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__title {
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__title {
+    padding-right: 6rem;
+    padding-left: 0;
+  }
+}
+.shows__header-container {
+  display: none;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .shows__header-container {
+    display: flex;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__header-container {
+    padding-top: 1rem;
+  }
+}
+.shows__header {
+  width: 100%;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .show {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.show:hover {
+  background-color: #e1e1e1;
+}
+.show:active, .show:focus {
+  background-color: #fafafa;
+}
+.show__info {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .show__info {
+    flex-direction: row;
+  }
+}
+.show__date, .show__venue, .show__location {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .show__date, .show__venue, .show__location {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .show__date-title, .show__venue-title, .show__location-title {
+    display: none;
+  }
+}
+.show__ticket {
+  margin-top: 1.2rem;
+}
+@media (min-width: 768px) {
+  .show__ticket {
+    margin-top: 0;
+  }
+}/*# sourceMappingURL=shows.css.map */
