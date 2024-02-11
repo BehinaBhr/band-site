@@ -116,6 +116,10 @@
     @include tablet {
       display: flex;
     }
+
+    @include desktop {
+      padding-top: 1rem;
+    }
   }
 
   &__header {

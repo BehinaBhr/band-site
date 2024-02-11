@@ -512,18 +512,20 @@ a {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .about__image-container {
     padding: 0rem 5.25rem 2.25rem 5.25rem;
-    height: 18rem;
+    height: 21rem;
+    align-items: center;
   }
 }
 @media (min-width: 1280px) {
   .about__image-container {
     padding-left: 9rem;
     padding-right: 9rem;
+    height: 30rem;
   }
 }
 .about__image {
@@ -531,20 +533,26 @@ a {
 }
 
 .slogan {
-  padding: 0rem 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 @media (min-width: 768px) {
   .slogan {
-    padding: 0rem 5.25rem;
+    padding-top: 2.25rem;
+    padding-left: 5.25rem;
+    padding-right: 5.25rem;
   }
 }
 @media (min-width: 1280px) {
   .slogan {
-    padding: 0rem 9rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
   }
 }
+.slogan__quote {
+  padding-bottom: 0.8rem;
+}
 .slogan p {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0;
   margin-top: 0;
 }
 
@@ -562,6 +570,14 @@ a {
   .band {
     padding-right: 9rem;
     padding-left: 9rem;
+  }
+}
+.band__name {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .band__name {
+    margin-bottom: 0.5rem;
   }
 }
 @media (min-width: 768px) {
@@ -644,6 +660,7 @@ a {
 @media (min-width: 768px) {
   .join {
     padding: 2.25rem;
+    padding-top: 3rem;
   }
 }
 @media (min-width: 1280px) {

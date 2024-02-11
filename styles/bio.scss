@@ -43,15 +43,18 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+
     @include tablet {
       padding: 0rem $tablet-big-padding $tablet-padding $tablet-big-padding;
-      height: 18rem;
+      height: 21rem;
+      align-items: center;
     }
 
     @include desktop {
       padding-left: $desktop-big-padding;
       padding-right: $desktop-big-padding;
+      height: 30rem;
     }
   }
 
@@ -61,17 +64,25 @@
 }
 
 .slogan {
-  padding: 0rem 1rem;
+  padding: 1rem 1rem 0 1rem;
+  
   @include tablet {
-    padding: 0rem $tablet-big-padding;
+    padding-top: $tablet-padding;
+    padding-left: $tablet-big-padding;
+    padding-right: $tablet-big-padding;
   }
 
   @include desktop {
-    padding: 0rem $desktop-big-padding;
+    padding-left: $desktop-big-padding;
+    padding-right: $desktop-big-padding;
+  }
+
+  &__quote {
+    padding-bottom: .8rem;
   }
 
   p {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0;
     margin-top: 0;
   }
 }
@@ -80,14 +91,22 @@
   padding: 1rem 1rem 0.5rem 1rem;
   display: flex;
   flex-direction: column;
+
   @include tablet {
-    padding: $tablet-padding $tablet-big-padding calc($tablet-padding - 1rem)
-      $tablet-big-padding;
+    padding: $tablet-padding $tablet-big-padding calc($tablet-padding - 1rem) $tablet-big-padding;
   }
 
   @include desktop {
     padding-right: $desktop-big-padding;
     padding-left: $desktop-big-padding;
+  }
+
+  &__name {
+    margin-bottom: 0;
+
+    @include tablet {
+      margin-bottom: 0.5rem;
+    }
   }
 
   &__content {
@@ -170,6 +189,7 @@
 
   @include tablet {
     padding: $tablet-padding;
+    padding-top: $tablet-mid-padding;
   }
 
   @include desktop {

@@ -583,6 +583,11 @@ a {
     display: flex;
   }
 }
+@media (min-width: 1280px) {
+  .shows__header-container {
+    padding-top: 1rem;
+  }
+}
 .shows__header {
   width: 100%;
 }
