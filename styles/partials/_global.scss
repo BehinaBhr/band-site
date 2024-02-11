@@ -105,18 +105,17 @@ a {
   position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
-  height: 12rem;
 
   @include tablet {
     padding-left: $tablet-padding;
     padding-right: $tablet-padding;
-    height: 28rem;
+    height: 28rem !important;
   }
 
   @include desktop {
     padding-left: $desktop-padding;
     padding-right: $desktop-padding;
-    height: 40rem;
+    height: 40rem !important;
   }
 
   &__name {

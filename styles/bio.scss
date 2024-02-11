@@ -5,6 +5,7 @@
 
 .hero {
   background-image: url("../Assets/Images/hero-bio.jpg");
+  height: 12rem;
 
   @include tablet {
     background-position-y: -3.5rem;
