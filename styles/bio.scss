@@ -208,6 +208,7 @@
   @include tablet {
     margin-right: $tablet-mid-padding;
     margin-left: $tablet-mid-padding;
+    padding-top: 1.75rem;
   }
 
   @include desktop {
