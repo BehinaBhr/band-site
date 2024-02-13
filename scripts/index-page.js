@@ -1,33 +1,54 @@
-const comments = [
-  {
-    name: "Victor Pinto",
-    timestamp: "11/02/2023",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    timestamp: "10/28/2023",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Isaac Tadesse",
-    timestamp: "10/20/2023",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+const apiKey = "496b1df2-b95b-4686-b99a-bdd3bba2a765";
+const api = new BandSiteApi(apiKey);
 
+// Function to display comments on the Bio Page
 const commentsEl = document.querySelector(".comments");
-showAllComments(comments);
 
-function showAllComments(comments) {
-  // remove everything inside commentsEl
-  commentsEl.innerHTML = "";
+async function showAllComments() {
+  try {
+    const comments = await api.getComments();
+    comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    console.log(comments);
 
-  for (let i = 0; i < comments.length; i++) {
-    const comment = comments[i];
-    displayComment(comment);
+    comments.forEach((comment) => {
+      displayComment(comment);
+    });
+  } catch (error) {
+    console.log(error);
   }
 }
+showAllComments();
+
+// const comments = [
+//   {
+//     name: "Victor Pinto",
+//     timestamp: "11/02/2023",
+//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     name: "Christina Cabrera",
+//     timestamp: "10/28/2023",
+//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     name: "Isaac Tadesse",
+//     timestamp: "10/20/2023",
+//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
+
+// const commentsEl = document.querySelector(".comments");
+// showAllComments(comments);
+
+// function showAllComments(comments) {
+//   // remove everything inside commentsEl
+//   commentsEl.innerHTML = "";
+
+//   for (let i = 0; i < comments.length; i++) {
+//     const comment = comments[i];
+//     displayComment(comment);
+//   }
+// }
 
 // -- Always create the HTML structure with styles before trying to write it via the DOM --
 /* <article class="comment">
@@ -43,8 +64,6 @@ function showAllComments(comments) {
     </div>
 </article> */
 
-
-
 function displayComment(comment) {
   const commentEl = document.createElement("article");
   commentEl.classList.add("comment");
@@ -55,25 +74,25 @@ function displayComment(comment) {
 
   const commentInfoEl = document.createElement("div");
   commentInfoEl.classList.add("comment__info");
-  
+
   const commentHeaderEl = document.createElement("div");
   commentHeaderEl.classList.add("comment__header");
-  
+
   const commentNameEl = document.createElement("h3");
   commentNameEl.classList.add("comment__name");
   commentNameEl.innerText = comment.name;
 
   const dateEl = document.createElement("div");
   dateEl.classList.add("comment__date");
-  dateEl.innerHTML = comment.timestamp;
+  // dateEl.innerHTML = comment.timestamp;
+  dateEl.innerHTML = formattedDate(comment.timestamp);
 
   commentHeaderEl.appendChild(commentNameEl);
   commentHeaderEl.appendChild(dateEl);
-  
-  
+
   const commentTextEl = document.createElement("p");
   commentTextEl.classList.add("comment__text");
-  commentTextEl.innerText = comment.text;
+  commentTextEl.innerText = comment.comment;
 
   commentInfoEl.appendChild(commentHeaderEl);
   commentInfoEl.appendChild(commentTextEl);
@@ -84,17 +103,16 @@ function displayComment(comment) {
   commentsEl.appendChild(commentEl);
 }
 
-
-
 // Related to form:
 const commentForm = document.getElementById("comment-form");
 
-commentForm.addEventListener("submit", (event) => {
+commentForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   document.getElementById("comment-text").classList.remove("error");
   document.getElementById("comment-name").classList.remove("error");
 
   console.log("Form submitted!");
+
   // clear error messages on submit, then process form, with fresh validation + error messages
   const name = event.target.name.value;
   const text = event.target.text.value;
@@ -104,7 +122,7 @@ commentForm.addEventListener("submit", (event) => {
   // current date as timestamp
   let now = dateFormat();
 
-  // Validation: If name or text is empty, show an error message and end event handler
+  // // Validation: If name or text is empty, show an error message and end event handler
   if (name === "" || text === "") {
     if (name === "") {
       document.getElementById("comment-name").classList.add("error");
@@ -123,9 +141,12 @@ commentForm.addEventListener("submit", (event) => {
     text: text,
   };
   // Add the new comment to the comments array
-  comments.push(newComment);
+  // comments.push(newComment);
+  await api.postComment(newComment);
+
   // Display all comments including the new one
-  showAllComments(comments);
+  // showAllComments(comments);
+  await showAllComments();
 
   // Clear input fields after submitting a new comment
   event.target.name.value = "";
@@ -140,3 +161,13 @@ function dateFormat() {
   now = `${m}/${d}/${y}`;
   return now;
 }
+function formattedDate(timestamp) {
+  let date = new Date(timestamp);
+  console.log(date);
+  let y = date.getFullYear();
+  let m = date.getMonth() + 1;
+  let d = date.getDate();
+  now = `${m}/${d}/${y}`;
+  return now;
+}
+showAllComments();
