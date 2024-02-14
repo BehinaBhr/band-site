@@ -25,6 +25,17 @@ class BandSiteApi {
       console.log(error);
     }
   }
+  async getShows(comment) {
+    try {
+      const response = await axios.get(
+        `${this.baseUrl}/showdates?api_key=${this.apiKey}`,
+        comment
+      );
+      return response.data;
+    } catch (error) {
+      console.log("Error fetching shows:", error);
+    }
+  }
 }
 
 // "api_key":"496b1df2-b95b-4686-b99a-bdd3bba2a765"}
