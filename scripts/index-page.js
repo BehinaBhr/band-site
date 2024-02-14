@@ -9,6 +9,8 @@ async function showAllComments() {
     const comments = await api.getComments();
     comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     console.log(comments);
+    // remove everything inside commentsEl
+    commentsEl.innerHTML = "";
 
     comments.forEach((comment) => {
       displayComment(comment);
@@ -114,6 +116,7 @@ commentForm.addEventListener("submit", async (event) => {
   console.log("Form submitted!");
 
   // clear error messages on submit, then process form, with fresh validation + error messages
+  console.log(event.target)
   const name = event.target.name.value;
   const text = event.target.text.value;
   console.log(name);
@@ -135,10 +138,11 @@ commentForm.addEventListener("submit", async (event) => {
   }
 
   // Create a new comment object
+  // new comment should be match with what we can do bty postman in post
   const newComment = {
     name: name,
-    timestamp: now,
-    text: text,
+    // timestamp: now,
+    comment: text,
   };
   // Add the new comment to the comments array
   // comments.push(newComment);
@@ -167,7 +171,5 @@ function formattedDate(timestamp) {
   let y = date.getFullYear();
   let m = date.getMonth() + 1;
   let d = date.getDate();
-  now = `${m}/${d}/${y}`;
-  return now;
+  return `${m}/${d}/${y}`;
 }
-showAllComments();
