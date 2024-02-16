@@ -207,7 +207,7 @@
 
 body {
   margin: 0;
-  font-family: "AvenirNextLTPro";
+  font-family: "AvenirNextLTPro", Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -607,10 +607,10 @@ a {
   }
 }
 .show:hover {
-  background-color: #e1e1e1;
-}
-.show:active, .show:focus {
   background-color: #fafafa;
+}
+.show--selected {
+  background-color: #e1e1e1 !important;
 }
 .show__info {
   display: flex;

@@ -2,20 +2,31 @@
 const apiKey = "496b1df2-b95b-4686-b99a-bdd3bba2a765";
 const api = new BandSiteApi(apiKey);
 
-const commentsEl = document.querySelector(".comments");
+// const commentsEl = document.querySelector(".comments");
 
 async function showAllShows() {
   try {
     const shows = await api.getShows();
     console.log(shows);
-    shows.forEach((show) => {
-      displayShow(show);
+    shows.forEach((show, index) => {
+      displayShow(show, index);
     });
   } catch (error) {
     console.log(error);
   }
 }
 showAllShows();
+
+
+function toggleSelected(showId) {
+  // Remove 'selected' class from all show elements
+  document.querySelectorAll(".show--selected").forEach((el) => {
+    el.classList.remove("show--selected");
+  });
+
+  const showEl = document.getElementById(showId);
+  showEl.classList.add("show--selected");
+}
 
 // const shows = [
 //   {
@@ -67,10 +78,10 @@ function createRowEl(title, content) {
 }
 
 function displayShow(show, index) {
-  const id = "shows-" + index;
+  const showId = "shows-" + index;
   const showEl = document.createElement("article");
   showEl.classList.add("show");
-  showEl.id = id;
+  showEl.id = showId;
 
   //const showDateEl = createRowEl("date", show.date);
   const showDateEl = createRowEl("date", formattedDate(show.date));
@@ -90,6 +101,10 @@ function displayShow(show, index) {
 
   showEl.appendChild(showInfoContainer);
   showEl.appendChild(showTicketBtnEl);
+
+  // Add a click event listener to toggle the 'selected' class
+
+  showEl.addEventListener("click", () => toggleSelected(showId));
 
   const showsContainer = document.querySelector(".shows__list");
   showsContainer.appendChild(showEl);

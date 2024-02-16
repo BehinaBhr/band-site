@@ -142,13 +142,17 @@
   }
 
   &:hover {
-    background-color: $lightsilver;
-  }
-
-  &:active,
-  &:focus {
     background-color: $lightwhite;
   }
+
+  &--selected {
+    background-color: $lightsilver !important;
+  }
+
+  // &:active,
+  // &:focus {
+  //   background-color: $lightsilver;
+  // }
 
   &__info {
     @extend .table;
