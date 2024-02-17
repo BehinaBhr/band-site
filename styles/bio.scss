@@ -3,6 +3,10 @@
 @use "./partials/mixins" as *;
 @use "./partials/variable" as *;
 
+.deleted {
+  display: none !important;
+}
+
 .hero {
   background-image: url("../Assets/Images/hero-bio.jpg");
   height: 12rem;

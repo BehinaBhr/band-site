@@ -24,6 +24,7 @@ showAllComments();
 function displayComment(comment) {
   const commentEl = document.createElement("article");
   commentEl.classList.add("comment");
+  commentEl.id = `comment-${comment.id}`;
 
   const avatarEl = document.createElement("div");
   avatarEl.classList.add("comment__avatar");
@@ -50,8 +51,22 @@ function displayComment(comment) {
   commentTextEl.classList.add("comment__text");
   commentTextEl.innerText = comment.comment;
 
+  // Like Button
+  const likeButton = document.createElement("button");
+  likeButton.classList.add("comment__button");
+  likeButton.innerText = "Like";
+  likeButton.addEventListener("click", () => handleLike(comment.id));
+
+  // Delete Button
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("comment__button");
+  deleteButton.innerText = "Delete";
+  deleteButton.addEventListener("click", () => handleDelete(comment.id));
+
   commentInfoEl.appendChild(commentHeaderEl);
   commentInfoEl.appendChild(commentTextEl);
+  commentInfoEl.appendChild(likeButton);
+  commentInfoEl.appendChild(deleteButton);
 
   commentEl.appendChild(avatarEl);
   commentEl.appendChild(commentInfoEl);
@@ -70,7 +85,7 @@ commentForm.addEventListener("submit", async (event) => {
   console.log("Form submitted!");
 
   // clear error messages on submit, then process form, with fresh validation + error messages
-  console.log(event.target)
+  console.log(event.target);
   const name = event.target.name.value;
   const text = event.target.text.value;
   console.log(name);
@@ -113,3 +128,27 @@ function formattedDate(timestamp) {
   let d = date.getDate();
   return `${m}/${d}/${y}`;
 }
+
+
+// Function to handle like button click
+async function handleLike(commentId) {
+  try {
+    const response_data = await api.likeComment(commentId);
+    console.log('API Response:', response_data);
+  } catch (error) {
+    console.log("Error liking comment:", error);
+  }
+}
+
+// Function to handle delete button click
+async function handleDelete(commentId) {
+  try {
+    await api.deleteComment(commentId);
+    // Hide the deleted comment
+    document.getElementById(`comment-${commentId}`).classList.add('deleted');
+  } catch (error) {
+    console.log("Error deleting comment:", error);
+  }
+}
+
+
