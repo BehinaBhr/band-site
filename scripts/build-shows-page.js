@@ -1,4 +1,3 @@
-
 const apiKey = "496b1df2-b95b-4686-b99a-bdd3bba2a765";
 const api = new BandSiteApi(apiKey);
 
@@ -15,14 +14,11 @@ async function showAllShows() {
 }
 showAllShows();
 
-
-function toggleSelected(showId) {
+function toggleSelected(showEl) {
   // Remove 'selected'class from all show elements
   document.querySelectorAll(".show--selected").forEach((el) => {
     el.classList.remove("show--selected");
   });
-
-  const showEl = document.getElementById(showId);
   showEl.classList.add("show--selected");
 }
 
@@ -43,10 +39,8 @@ function createRowEl(title, content) {
 }
 
 function displayShow(show, index) {
-  const showId = "shows-" + index;
   const showEl = document.createElement("article");
   showEl.classList.add("show");
-  showEl.id = showId;
 
   const showDateEl = createRowEl("date", formattedDate(show.date));
   const showVenueEl = createRowEl("venue", show.place);
@@ -65,7 +59,7 @@ function displayShow(show, index) {
   showEl.appendChild(showInfoContainer);
   showEl.appendChild(showTicketBtnEl);
 
-  showEl.addEventListener("click", () => toggleSelected(showId));
+  showEl.addEventListener("click", () => toggleSelected(showEl));
 
   const showsContainer = document.querySelector(".shows__list");
   showsContainer.appendChild(showEl);
