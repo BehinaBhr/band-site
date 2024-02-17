@@ -26,62 +26,8 @@ function displayComment(comment) {
   commentEl.classList.add("comment");
   commentEl.id = `comment-${comment.id}`;
 
-  const avatarEl = document.createElement("div");
-  avatarEl.classList.add("comment__avatar");
-  avatarEl.classList.add("comment__avatar--empty");
-
-  const commentInfoEl = document.createElement("div");
-  commentInfoEl.classList.add("comment__info");
-
-  const commentHeaderEl = document.createElement("div");
-  commentHeaderEl.classList.add("comment__header");
-
-  const commentNameEl = document.createElement("h3");
-  commentNameEl.classList.add("comment__name");
-  commentNameEl.innerText = comment.name;
-
-  const dateEl = document.createElement("div");
-  dateEl.classList.add("comment__date");
-  dateEl.innerHTML = formattedDate(comment.timestamp);
-
-  commentHeaderEl.appendChild(commentNameEl);
-  commentHeaderEl.appendChild(dateEl);
-
-  const commentTextEl = document.createElement("p");
-  commentTextEl.classList.add("comment__text");
-  commentTextEl.innerText = comment.comment;
-
-  const bottonsContainer = document.createElement("div");
-  bottonsContainer.classList.add("comment__buttons-container");
-
-  // Likes count
-  const likesCount = document.createElement('div')
-  likesCount.classList.add('comment__likes-count')
-  likesCount.innerHTML = comment.likes
-
-  // Like Button
-  const likeButton = document.createElement("button");
-  likeButton.classList.add("comment__button");
-  likeButton.classList.add("comment__like-icon");
-  const likeIcon = document.createElement("img");
-  likeIcon.src = "../assets/icons/svg/icon-like.svg";
-  likeButton.appendChild(likeIcon);
-  likeButton.addEventListener("click", () => handleLike(comment.id, likeButton, likesCount));
-
-  // Delete Button
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("comment__button");
-  const deleteIcon = document.createElement("img");
-  deleteIcon.src = "../assets/icons/svg/icon-delete.svg";
-  deleteButton.appendChild(deleteIcon);
-  deleteButton.addEventListener("click", () => handleDelete(comment.id));
-
-  bottonsContainer.appendChild(likesCount);
-  bottonsContainer.appendChild(likeButton);
-  bottonsContainer.appendChild(deleteButton);
-  commentInfoEl.appendChild(commentHeaderEl);
-  commentInfoEl.appendChild(commentTextEl);
-  commentInfoEl.appendChild(bottonsContainer);
+  const avatarEl = createAvatar();
+  const commentInfoEl = createCommentInfo(comment);
 
   commentEl.appendChild(avatarEl);
   commentEl.appendChild(commentInfoEl);
@@ -135,6 +81,87 @@ commentForm.addEventListener("submit", async (event) => {
   event.target.text.value = "";
 });
 
+function createCommentInfo(comment) {
+  const commentInfoEl = document.createElement("div");
+  commentInfoEl.classList.add("comment__info");
+
+  const commentHeaderEl = createCommentHeader(comment);
+
+  const commentTextEl = createCommentText(comment);
+
+  const bottonsContainer = createButtonContainer(comment);
+
+  commentInfoEl.appendChild(commentHeaderEl);
+  commentInfoEl.appendChild(commentTextEl);
+  commentInfoEl.appendChild(bottonsContainer);
+
+  return commentInfoEl;
+}
+
+function createAvatar() {
+  const avatarEl = document.createElement("div");
+  avatarEl.classList.add("comment__avatar");
+  avatarEl.classList.add("comment__avatar--empty");
+  return avatarEl;
+}
+
+function createCommentText(comment) {
+  const commentTextEl = document.createElement("p");
+  commentTextEl.classList.add("comment__text");
+  commentTextEl.innerText = comment.comment;
+  return commentTextEl;
+}
+
+function createCommentHeader(comment) {
+  const commentHeaderEl = document.createElement("div");
+  commentHeaderEl.classList.add("comment__header");
+
+  const commentNameEl = document.createElement("h3");
+  commentNameEl.classList.add("comment__name");
+  commentNameEl.innerText = comment.name;
+
+  const dateEl = document.createElement("div");
+  dateEl.classList.add("comment__date");
+  dateEl.innerHTML = formattedDate(comment.timestamp);
+
+  commentHeaderEl.appendChild(commentNameEl);
+  commentHeaderEl.appendChild(dateEl);
+  return commentHeaderEl;
+}
+
+function createButtonContainer(comment) {
+  const bottonsContainer = document.createElement("div");
+  bottonsContainer.classList.add("comment__buttons-container");
+
+  const likesCount = document.createElement("div");
+  likesCount.classList.add("comment__likes-count");
+  likesCount.innerHTML = comment.likes;
+
+  const likeImgSrc = "../assets/icons/svg/icon-like.svg";
+  const likeButton = createButton(likeImgSrc);
+  likeButton.addEventListener("click", () =>
+    handleLike(comment.id, likeButton, likesCount)
+  );
+
+  const deleteImgSrc = "../assets/icons/svg/icon-delete.svg";
+  const deleteButton = createButton(deleteImgSrc);
+  deleteButton.addEventListener("click", () => handleDelete(comment.id));
+
+  bottonsContainer.appendChild(likesCount);
+  bottonsContainer.appendChild(likeButton);
+  bottonsContainer.appendChild(deleteButton);
+  return bottonsContainer;
+}
+
+function createButton(img_src) {
+  const button = document.createElement("button");
+  button.classList.add("comment__button");
+  const icon = document.createElement("img");
+  icon.src = img_src;
+  button.appendChild(icon);
+  return button;
+}
+
 function formattedDate(timestamp) {
   let date = new Date(timestamp);
   console.log(date);
@@ -144,11 +171,10 @@ function formattedDate(timestamp) {
   return `${m}/${d}/${y}`;
 }
 
-// Function to handle like button click
 async function handleLike(commentId, likeButton, likesCount) {
   try {
     const response_data = await api.likeComment(commentId);
-    likesCount.innerHTML = response_data.likes
+    likesCount.innerHTML = response_data.likes;
     likeButton.classList.add("comment__button--liked");
     console.log("API Response:", response_data);
   } catch (error) {
@@ -156,7 +182,6 @@ async function handleLike(commentId, likeButton, likesCount) {
   }
 }
 
-// Function to handle delete button click
 async function handleDelete(commentId) {
   try {
     await api.deleteComment(commentId);
