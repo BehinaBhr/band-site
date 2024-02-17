@@ -142,12 +142,11 @@
   }
 
   &:hover {
-    background-color: $lightsilver;
+    background-color: $lightwhite;
   }
 
-  &:active,
-  &:focus {
-    background-color: $lightwhite;
+  &--selected {
+    background-color: $lightsilver !important;
   }
 
   &__info {
@@ -179,10 +178,7 @@
       }
     }
   }
-  // The CTA button width for desktop and tablet will be no
-  // less than 150px,
-  // and have no less than 32px of padding left & right.
-  // The CTA button for mobile should span the entire width of its container.
+
 
   &__ticket {
     @extend .button;

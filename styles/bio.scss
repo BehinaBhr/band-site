@@ -3,6 +3,10 @@
 @use "./partials/mixins" as *;
 @use "./partials/variable" as *;
 
+.deleted {
+  display: none !important;
+}
+
 .hero {
   background-image: url("../Assets/Images/hero-bio.jpg");
   height: 12rem;
@@ -368,6 +372,28 @@
 
     &--empty {
       background-color: $lightsilver;
+    }
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: .5rem;
+
+    &:hover {
+      background-color: $lightsilver;
+    }
+
+    &--liked {
+      background-color: green;
     }
   }
 }
