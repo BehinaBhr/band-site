@@ -378,14 +378,15 @@
   &__buttons-container {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
   }
 
   &__button {
     border: none;
     background-color: transparent;
     border-radius: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2.2rem;
+    width: 2.2rem;
     margin-left: .5rem;
 
     &:hover {
@@ -393,11 +394,11 @@
     }
 
     &--liked {
-      background-color: green;
+      background-color: $green !important;
     }
   }
 }
 
 .error {
-  border: 1px solid #d22d2d !important;
+  border: 1px solid $red !important;
 }

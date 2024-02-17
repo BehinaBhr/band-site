@@ -53,25 +53,30 @@ function displayComment(comment) {
 
   const bottonsContainer = document.createElement("div");
   bottonsContainer.classList.add("comment__buttons-container");
+
+  // Likes count
+  const likesCount = document.createElement('div')
+  likesCount.classList.add('comment__likes-count')
+  likesCount.innerHTML = comment.likes
+
   // Like Button
   const likeButton = document.createElement("button");
   likeButton.classList.add("comment__button");
-  likeButton.id = `like-${comment.id}`;
+  likeButton.classList.add("comment__like-icon");
   const likeIcon = document.createElement("img");
   likeIcon.src = "../assets/icons/svg/icon-like.svg";
-  likeIcon.classList.add("comment__like-icon");
   likeButton.appendChild(likeIcon);
-  likeButton.addEventListener("click", () => handleLike(comment.id));
+  likeButton.addEventListener("click", () => handleLike(comment.id, likeButton, likesCount));
 
   // Delete Button
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("comment__button");
   const deleteIcon = document.createElement("img");
   deleteIcon.src = "../assets/icons/svg/icon-delete.svg";
-  deleteIcon.classList.add("comment__delete-icon");
   deleteButton.appendChild(deleteIcon);
   deleteButton.addEventListener("click", () => handleDelete(comment.id));
 
+  bottonsContainer.appendChild(likesCount);
   bottonsContainer.appendChild(likeButton);
   bottonsContainer.appendChild(deleteButton);
   commentInfoEl.appendChild(commentHeaderEl);
@@ -140,12 +145,11 @@ function formattedDate(timestamp) {
 }
 
 // Function to handle like button click
-async function handleLike(commentId) {
+async function handleLike(commentId, likeButton, likesCount) {
   try {
     const response_data = await api.likeComment(commentId);
-    document
-      .getElementById(`like-${commentId}`)
-      .classList.add("comment__button--liked");
+    likesCount.innerHTML = response_data.likes
+    likeButton.classList.add("comment__button--liked");
     console.log("API Response:", response_data);
   } catch (error) {
     console.log("Error liking comment:", error);
