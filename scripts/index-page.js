@@ -51,22 +51,32 @@ function displayComment(comment) {
   commentTextEl.classList.add("comment__text");
   commentTextEl.innerText = comment.comment;
 
+  const bottonsContainer = document.createElement("div");
+  bottonsContainer.classList.add("comment__buttons-container");
   // Like Button
   const likeButton = document.createElement("button");
   likeButton.classList.add("comment__button");
-  likeButton.innerText = "Like";
+  likeButton.id = `like-${comment.id}`;
+  const likeIcon = document.createElement("img");
+  likeIcon.src = "../assets/icons/svg/icon-like.svg";
+  likeIcon.classList.add("comment__like-icon");
+  likeButton.appendChild(likeIcon);
   likeButton.addEventListener("click", () => handleLike(comment.id));
 
   // Delete Button
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("comment__button");
-  deleteButton.innerText = "Delete";
+  const deleteIcon = document.createElement("img");
+  deleteIcon.src = "../assets/icons/svg/icon-delete.svg";
+  deleteIcon.classList.add("comment__delete-icon");
+  deleteButton.appendChild(deleteIcon);
   deleteButton.addEventListener("click", () => handleDelete(comment.id));
 
+  bottonsContainer.appendChild(likeButton);
+  bottonsContainer.appendChild(deleteButton);
   commentInfoEl.appendChild(commentHeaderEl);
   commentInfoEl.appendChild(commentTextEl);
-  commentInfoEl.appendChild(likeButton);
-  commentInfoEl.appendChild(deleteButton);
+  commentInfoEl.appendChild(bottonsContainer);
 
   commentEl.appendChild(avatarEl);
   commentEl.appendChild(commentInfoEl);
@@ -129,12 +139,14 @@ function formattedDate(timestamp) {
   return `${m}/${d}/${y}`;
 }
 
-
 // Function to handle like button click
 async function handleLike(commentId) {
   try {
     const response_data = await api.likeComment(commentId);
-    console.log('API Response:', response_data);
+    document
+      .getElementById(`like-${commentId}`)
+      .classList.add("comment__button--liked");
+    console.log("API Response:", response_data);
   } catch (error) {
     console.log("Error liking comment:", error);
   }
@@ -145,10 +157,8 @@ async function handleDelete(commentId) {
   try {
     await api.deleteComment(commentId);
     // Hide the deleted comment
-    document.getElementById(`comment-${commentId}`).classList.add('deleted');
+    document.getElementById(`comment-${commentId}`).classList.add("deleted");
   } catch (error) {
     console.log("Error deleting comment:", error);
   }
 }
-
-

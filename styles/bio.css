@@ -845,6 +845,24 @@ a {
 .comment__avatar--empty {
   background-color: #e1e1e1;
 }
+.comment__buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.comment__button {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: 0.5rem;
+}
+.comment__button:hover {
+  background-color: #e1e1e1;
+}
+.comment__button--liked {
+  background-color: green;
+}
 
 .error {
   border: 1px solid #d22d2d !important;
