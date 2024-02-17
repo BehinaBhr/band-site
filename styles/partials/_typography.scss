@@ -279,4 +279,9 @@
     font-weight: 400;
     color: $black;
   }
+
+  &__likes-count {
+    @extend .body-font;
+    color: $black;
+  }
 }

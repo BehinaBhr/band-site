@@ -51,12 +51,12 @@
   }
 }
 
-.body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+.body-font, .comment__likes-count, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
   font-size: 13px;
   line-height: 18px;
 }
 @media (min-width: 768px) {
-  .body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+  .body-font, .comment__likes-count, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
     font-size: 14px;
     line-height: 22px;
   }
@@ -202,6 +202,9 @@
 }
 .comment__text {
   font-weight: 400;
+  color: #323232;
+}
+.comment__likes-count {
   color: #323232;
 }
 
@@ -848,20 +851,21 @@ a {
 .comment__buttons-container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 .comment__button {
   border: none;
   background-color: transparent;
   border-radius: 50%;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.2rem;
+  width: 2.2rem;
   margin-left: 0.5rem;
 }
 .comment__button:hover {
   background-color: #e1e1e1;
 }
 .comment__button--liked {
-  background-color: green;
+  background-color: green !important;
 }
 
 .error {

@@ -51,12 +51,12 @@
   }
 }
 
-.body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+.body-font, .comment__likes-count, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
   font-size: 13px;
   line-height: 18px;
 }
 @media (min-width: 768px) {
-  .body-font, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
+  .body-font, .comment__likes-count, .comment__text, .comment__date, .comment__name, .show__date-content, .show__venue-content, .show__location-content, .band__description, .slogan__quoter, .top-nav__item {
     font-size: 14px;
     line-height: 22px;
   }
@@ -202,6 +202,9 @@
 }
 .comment__text {
   font-weight: 400;
+  color: #323232;
+}
+.comment__likes-count {
   color: #323232;
 }
 
